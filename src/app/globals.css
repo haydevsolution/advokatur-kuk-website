@@ -1,26 +1,232 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #39024d;
+  --primary-light: #4a0363;
+  --gold: #c9a227;
+  --gold-light: #d4b34a;
+  --white: #ffffff;
+  --black: #000000;
+  --gray-light: #f5f5f5;
+  --gray: #e5e5e5;
+  --gray-dark: #333333;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--white);
+  color: var(--gray-dark);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navbar Link Underline Animation */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Button Styles - Modern & Rounded */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gold);
+  color: var(--black);
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.875rem 2rem;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--primary);
+  padding: 0.875rem 2rem;
+  border: 2px solid var(--primary);
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Section Styles */
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--gray-dark);
+  margin-bottom: 2rem;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Gold Accent Border */
+.gold-border {
+  border-left: 4px solid var(--gold);
+  padding-left: 1rem;
+}
+
+/* Card Styles */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px rgba(57, 2, 77, 0.1);
+  border-color: var(--gold);
+}
+
+/* Cookie Banner Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cookie-banner {
+  animation: slideUp 0.5s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
 }

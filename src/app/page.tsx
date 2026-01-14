@@ -1,65 +1,144 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Hero Section - ohne pt-20 da es die erste Section ist */}
+      <div className="-mt-20">
+        <Hero />
+      </div>
+
+      {/* Über die Kanzlei - Kurze Vorstellung */}
+      <section className="section bg-white">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="section-title">Ihre Kanzlei für Rechtsfragen</h2>
+              <div className="gold-border">
+                <p className="text-lg text-gray-600 mb-6">
+                  Bei Advokatur-KuK verbinden wir juristische Expertise mit persönlicher
+                  Betreuung. Unser Ziel ist es, für Sie die beste Lösung zu finden –
+                  kompetent, engagiert und vertrauensvoll.
+                </p>
+                <p className="text-lg text-gray-600">
+                  [Platzhalter: Hier kommt ein individueller Text über die Kanzlei,
+                  ihre Geschichte und ihre Werte.]
+                </p>
+              </div>
+              <Link href="/kanzlei" className="btn-primary mt-6">
+                Mehr über uns erfahren
+              </Link>
+            </div>
+            <div
+              className="h-80 flex items-center justify-center"
+              style={{ backgroundColor: 'var(--gray-light)' }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <p className="text-gray-400">[Platzhalter für Bild]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rechtsgebiete Übersicht */}
+      <section className="section" style={{ backgroundColor: 'var(--gray-light)' }}>
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Unsere Rechtsgebiete</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
+              Wir beraten und vertreten Sie kompetent in verschiedenen Rechtsbereichen.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Rechtsgebiet 1",
+                description: "[Platzhalter: Beschreibung des ersten Rechtsgebiets]",
+              },
+              {
+                title: "Rechtsgebiet 2",
+                description: "[Platzhalter: Beschreibung des zweiten Rechtsgebiets]",
+              },
+              {
+                title: "Rechtsgebiet 3",
+                description: "[Platzhalter: Beschreibung des dritten Rechtsgebiets]",
+              },
+            ].map((item, index) => (
+              <div key={index} className="card">
+                <div
+                  className="w-12 h-12 mb-4 flex items-center justify-center"
+                  style={{ backgroundColor: 'var(--primary)' }}
+                >
+                  <span className="text-white font-bold">{index + 1}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--primary)' }}>
+                  {item.title}
+                </h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/rechtsgebiete" className="btn-outline-dark">
+              Alle Rechtsgebiete ansehen
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Warum uns wählen */}
+      <section className="section bg-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Warum Advokatur-KuK?</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
+              [Platzhalter: Einleitungstext zu den Vorteilen der Kanzlei]
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { title: "Erfahrung", text: "[Platzhalter]" },
+              { title: "Kompetenz", text: "[Platzhalter]" },
+              { title: "Vertrauen", text: "[Platzhalter]" },
+              { title: "Persönlich", text: "[Platzhalter]" },
+            ].map((item, index) => (
+              <div key={index} className="text-center p-6">
+                <div
+                  className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full"
+                  style={{ backgroundColor: 'var(--gold)', color: 'var(--black)' }}
+                >
+                  <span className="font-bold text-xl">{index + 1}</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--primary)' }}>
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kontakt CTA */}
+      <section
+        className="section text-center text-white"
+        style={{ backgroundColor: 'var(--primary)' }}
+      >
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Haben Sie rechtliche Fragen?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Kontaktieren Sie uns für eine unverbindliche Erstberatung.
           </p>
+          <Link href="/kontakt" className="btn-gold">
+            Jetzt Kontakt aufnehmen
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
