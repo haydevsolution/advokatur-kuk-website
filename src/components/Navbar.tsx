@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navItems = [
   { name: 'Kanzlei', href: '/kanzlei' },
@@ -12,6 +12,17 @@ const navItems = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
@@ -30,63 +41,88 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Minimal Hamburger Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden relative w-10 h-10 flex items-center justify-center z-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menü öffnen"
+            aria-label={mobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            <div className="w-6 h-4 relative flex flex-col justify-between">
+              <span
+                className={`block h-0.5 transition-all duration-300 ease-in-out origin-center ${
+                  mobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''
+                }`}
+                style={{ backgroundColor: mobileMenuOpen ? 'white' : 'var(--primary)' }}
+              />
+              <span
+                className={`block h-0.5 transition-all duration-300 ease-in-out ${
+                  mobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}
+                style={{ backgroundColor: 'var(--primary)' }}
+              />
+              <span
+                className={`block h-0.5 transition-all duration-300 ease-in-out origin-center ${
+                  mobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''
+                }`}
+                style={{ backgroundColor: mobileMenuOpen ? 'white' : 'var(--primary)' }}
+              />
+            </div>
           </button>
 
-          {/* Logo / Firmenname - Rechts */}
-          <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold tracking-wide" style={{ color: 'var(--primary)' }}>
+          {/* Logo */}
+          <Link href="/" className="flex items-center z-50">
+            <span
+              className="text-xl font-bold tracking-wide transition-colors duration-300"
+              style={{ color: mobileMenuOpen ? 'white' : 'var(--primary)' }}
+            >
               Advokatur-KuK
             </span>
           </Link>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden fixed inset-0 top-20 bg-white z-40 transform transition-transform duration-300 ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="flex flex-col p-6 space-y-4">
-            {navItems.map((item) => (
+      {/* Minimal Mobile Menu */}
+      <div
+        className={`md:hidden fixed inset-0 transition-all duration-400 ease-in-out ${
+          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        }`}
+        style={{ backgroundColor: 'var(--primary)' }}
+      >
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <nav className="flex flex-col items-center gap-12">
+            {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg font-medium py-3 border-b border-gray-100"
-                style={{ color: 'var(--black)' }}
+                className={`text-2xl tracking-wide text-white transition-all duration-300 hover:opacity-60 ${
+                  mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+                style={{
+                  transitionDelay: mobileMenuOpen ? `${index * 80}ms` : '0ms',
+                }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-          </div>
+          </nav>
+
+        </div>
+
+        {/* Button ganz unten */}
+        <div
+          className={`absolute bottom-12 left-1/2 -translate-x-1/2 transition-all duration-300 ${
+            mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+          style={{ transitionDelay: mobileMenuOpen ? '350ms' : '0ms' }}
+        >
+          <Link
+            href="/kontakt"
+            className="btn-gold"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Kontakt aufnehmen
+          </Link>
         </div>
       </div>
     </nav>
