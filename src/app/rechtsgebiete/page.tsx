@@ -44,11 +44,11 @@ export default function RechtsgebietePage() {
     <>
       {/* Page Header */}
       <section
-        className="py-20 text-center text-white"
+        className="pt-36 pb-20 text-center text-white"
         style={{ backgroundColor: 'var(--primary)' }}
       >
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Unsere Rechtsgebiete</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Unsere Rechtsgebiete</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Kompetente Beratung in allen Rechtsfragen
           </p>
@@ -57,10 +57,16 @@ export default function RechtsgebietePage() {
 
       {/* Einleitung */}
       <section className="section bg-white">
-        <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title">Unsere Expertise</h2>
-            <p className="text-lg text-gray-600">
+        <div className="container mx-auto px-6 flex justify-center">
+          <div className="max-w-3xl w-full flex flex-col items-center text-center">
+            <div
+              className="w-16 h-0.5 mb-6"
+              style={{ backgroundColor: 'var(--gold)' }}
+            ></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" style={{ color: 'var(--primary)' }}>
+              Unsere Expertise
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed text-center">
               [Platzhalter: Einleitungstext zu den Rechtsgebieten. Beschreibung der
               Spezialisierungen und der Erfahrung der Kanzlei in den verschiedenen
               Rechtsbereichen.]

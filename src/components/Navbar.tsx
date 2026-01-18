@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const navItems = [
+  { name: 'Home', href: '/' },
   { name: 'Kanzlei', href: '/kanzlei' },
   { name: 'Rechtsgebiete', href: '/rechtsgebiete' },
   { name: 'Über uns', href: '/ueber-uns' },

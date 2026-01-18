@@ -10,11 +10,11 @@ export default function KanzleiPage() {
     <>
       {/* Page Header */}
       <section
-        className="py-20 text-center text-white"
+        className="pt-36 pb-20 text-center text-white"
         style={{ backgroundColor: 'var(--primary)' }}
       >
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Unsere Kanzlei</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Unsere Kanzlei</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Kompetenz trifft Engagement
           </p>

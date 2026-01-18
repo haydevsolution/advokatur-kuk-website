@@ -61,40 +61,40 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Transparentes Lila Overlay */}
+      {/* Transparentes Marineblau Overlay */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(75, 35, 95, 0.7)' }}
+        style={{ backgroundColor: 'rgba(15, 45, 82, 0.75)' }}
       ></div>
 
       {/* Zusätzlicher dunkler Gradient für bessere Lesbarkeit */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
+      <div className="container mx-auto px-6 relative z-10 flex justify-center">
+        <div className="max-w-2xl w-full flex flex-col items-center text-center">
           {/* Gold Accent Line */}
           <div
-            className="w-24 h-1 mb-8"
+            className="w-20 h-0.5 mb-10"
             style={{ backgroundColor: 'var(--gold)' }}
           ></div>
 
           {/* Begrüßung */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg text-center">
             Willkommen bei
             <br />
             <span style={{ color: 'var(--gold)' }}>Advokatur-KuK</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-100 mb-6 drop-shadow-md">
+          <p className="text-xl md:text-2xl text-gray-100 mb-8 drop-shadow-md text-center">
             Kompetente Rechtsberatung mit persönlicher Betreuung
           </p>
 
-          <p className="text-lg text-gray-200 mb-10 max-w-xl drop-shadow-md leading-relaxed">
+          <p className="text-lg text-gray-200 mb-14 max-w-lg drop-shadow-md leading-relaxed text-center">
             Wir stehen Ihnen mit Erfahrung, Engagement und Expertise zur Seite. Vertrauen Sie auf unsere langjährige Erfahrung in allen Rechtsfragen.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
             <Link href="/kontakt" className="btn-gold">
               Kontakt aufnehmen
             </Link>

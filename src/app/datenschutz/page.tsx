@@ -10,11 +10,11 @@ export default function DatenschutzPage() {
     <>
       {/* Page Header */}
       <section
-        className="py-20 text-center text-white"
+        className="pt-36 pb-20 text-center text-white"
         style={{ backgroundColor: 'var(--primary)' }}
       >
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Datenschutzerklärung</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Datenschutzerklärung</h1>
         </div>
       </section>
 

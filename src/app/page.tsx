@@ -13,7 +13,7 @@ export default function Home() {
       {/* Über die Kanzlei - Kurze Vorstellung */}
       <section className="section bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div>
               <h2 className="section-title">Ihre Kanzlei für Rechtsfragen</h2>
               <div className="gold-border">
@@ -28,7 +28,7 @@ export default function Home() {
                   Angelegenheiten zur Seite.
                 </p>
               </div>
-              <div className="mt-8">
+              <div className="mt-10">
                 <Link href="/kanzlei" className="btn-primary">
                   Mehr über uns erfahren
                 </Link>
@@ -49,14 +49,14 @@ export default function Home() {
       {/* Rechtsgebiete Übersicht */}
       <section className="section" style={{ backgroundColor: 'var(--gray-light)' }}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">Unsere Rechtsgebiete</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
               Wir beraten und vertreten Sie kompetent in verschiedenen Rechtsbereichen.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 title: "Vertragsrecht",
@@ -101,7 +101,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link href="/rechtsgebiete" className="btn-outline-dark">
               Alle Rechtsgebiete ansehen
             </Link>
@@ -112,14 +112,14 @@ export default function Home() {
       {/* Warum uns wählen */}
       <section className="section bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">Warum Advokatur-KuK?</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
               Wir setzen auf Qualität, Vertrauen und persönliche Betreuung.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-10">
             {[
               {
                 title: "Erfahrung",
@@ -158,7 +158,7 @@ export default function Home() {
                 ),
               },
             ].map((item, index) => (
-              <div key={index} className="text-center p-6">
+              <div key={index} className="text-center p-8">
                 <div
                   className="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full"
                   style={{ backgroundColor: 'var(--gold)', color: 'var(--black)' }}
@@ -181,10 +181,10 @@ export default function Home() {
         style={{ backgroundColor: 'var(--primary)' }}
       >
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Haben Sie rechtliche Fragen?
           </h2>
-          <p className="text-xl text-gray-300 mb-10">
+          <p className="text-xl text-gray-300 mb-14 max-w-2xl mx-auto">
             Kontaktieren Sie uns für eine unverbindliche Erstberatung.
           </p>
           <Link href="/kontakt" className="btn-gold">

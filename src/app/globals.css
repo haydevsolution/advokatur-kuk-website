@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #39024d;
-  --primary-light: #4a0363;
+  --primary: #0f2d52;
+  --primary-light: #1a4175;
   --gold: #c9a227;
   --gold-light: #d4b34a;
   --white: #ffffff;
@@ -163,20 +163,26 @@ body {
 
 /* Section Styles */
 .section {
-  padding: 5rem 1.5rem;
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 8rem 1.5rem;
+  }
 }
 
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--gray-dark);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Container */
@@ -189,19 +195,20 @@ body {
 /* Gold Accent Border */
 .gold-border {
   border-left: 4px solid var(--gold);
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 /* Card Styles */
 .card {
   background: var(--white);
   border: 1px solid var(--gray);
-  padding: 2rem;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 10px 30px rgba(57, 2, 77, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 45, 82, 0.1);
   border-color: var(--gold);
 }
 
