@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -157,12 +157,10 @@ const SplitText = ({
   const classes = `split-parent ${className}`;
   const content = splitTextIntoElements(text, splitType);
 
-  const TagName = tag as keyof JSX.IntrinsicElements;
-
-  return (
-    <TagName ref={ref as any} style={mergedStyle} className={classes}>
-      {content}
-    </TagName>
+  return React.createElement(
+    tag,
+    { ref, style: mergedStyle, className: classes },
+    content
   );
 };
 
