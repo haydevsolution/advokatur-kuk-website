@@ -1,20 +1,56 @@
-import { Metadata } from "next";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Datenschutz | Advokatur-KuK",
-  description: "Datenschutzerklärung der Rechtsanwaltskanzlei Advokatur-KuK.",
-};
 
 export default function DatenschutzPage() {
   return (
     <>
       {/* Page Header */}
-      <section
-        className="pt-36 pb-20 text-center text-white"
-        style={{ backgroundColor: 'var(--primary)' }}
-      >
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold">Datenschutzerklärung</h1>
+      <section style={{ 
+        paddingTop: '9rem', 
+        paddingBottom: '5rem', 
+        textAlign: 'center', 
+        color: 'white',
+        position: 'relative' as const,
+        overflow: 'hidden',
+        background: 'linear-gradient(135deg, #0a1f3d 0%, #0f2d52 50%, #1a4d7a 100%)'
+      }}>
+        {/* Decorative Elements */}
+        <div style={{
+          position: 'absolute',
+          top: '-10%',
+          right: '-5%',
+          width: '40%',
+          height: '80%',
+          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%)',
+          borderRadius: '50%',
+          pointerEvents: 'none',
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '-15%',
+          left: '-5%',
+          width: '35%',
+          height: '70%',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%)',
+          borderRadius: '50%',
+          pointerEvents: 'none',
+        }} />
+        
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 1 }}>
+          <h1 style={{ 
+            fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+            fontWeight: 700, 
+            letterSpacing: '-0.02em',
+            lineHeight: '1.2',
+            background: 'linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            marginBottom: '1.5rem',
+            filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.3))'
+          }}>
+            Privacy Policy
+          </h1>
         </div>
       </section>
 

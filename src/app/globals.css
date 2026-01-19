@@ -63,6 +63,97 @@ body {
   width: 100%;
 }
 
+/* Home Button Style */
+.nav-home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: var(--gray-light);
+  color: var(--primary);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-home-btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+/* Styled Navigation Links */
+.nav-link-styled {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  color: var(--gray-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+.nav-link-styled:hover {
+  background-color: var(--gray-light);
+  color: var(--primary);
+}
+
+.nav-link-styled::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-link-styled:hover::after {
+  width: 40%;
+}
+
+/* Active Navigation Link */
+.nav-link-active {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-link-active::after {
+  width: 40%;
+}
+
+/* Contact Button in Navbar */
+.btn-nav-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-nav-contact:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 45, 82, 0.2);
+}
+
 /* Button Styles - Modern & Rounded */
 .btn-primary {
   display: inline-flex;

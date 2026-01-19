@@ -1,18 +1,40 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Kanzlei', href: '/kanzlei' },
-  { name: 'Rechtsgebiete', href: '/rechtsgebiete' },
-  { name: 'Über uns', href: '/ueber-uns' },
-  { name: 'Kontakt', href: '/kontakt' },
+  { 
+    name: 'Services', 
+    href: '/services',
+    dropdown: [
+      { name: 'Dispute Resolution', href: '/services#dispute-resolution' },
+      { name: 'Legal Advice', href: '/services#legal-advice' },
+      { name: 'Compliance', href: '/services#compliance' }
+    ]
+  },
+  { name: 'About us', href: '/about-us' },
+  { 
+    name: 'References', 
+    href: '/references',
+    dropdown: [
+      { name: 'In-house Experience', href: '/references#in-house-experience' },
+      { name: 'ADR experience', href: '/references#adr-experience' },
+      { name: 'Cases', href: '/references#cases' },
+      { name: 'Publications', href: '/references#publications' }
+    ]
+  },
+  { name: 'Contact', href: '/kontakt' },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -25,28 +47,66 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  return (
-    <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center h-20">
-          {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="nav-link"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show navbar when at top of page
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      }
+      // Hide when scrolling down, show when scrolling up
+      else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
 
-          {/* Minimal Hamburger Button */}
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const handleMouseEnter = (itemName: string) => {
+    setOpenDropdown(itemName);
+  };
+
+  const handleMouseLeave = () => {
+    setOpenDropdown(null);
+  };
+
+  return (
+    <nav 
+      className="shadow-sm fixed w-full top-0 z-50" 
+      style={{ 
+        backgroundColor: 'white',
+        transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s ease-in-out'
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-10 lg:px-12">
+        <div className="flex items-center justify-between h-24">
+
+          {/* Left: Logo */}
+          <Link href="/" className="hidden md:flex items-center group transition-transform duration-300 hover:scale-105" style={{ marginLeft: '2rem', backgroundColor: 'transparent' }}>
+            <Image
+              src="/images/Logo-KuK(1).png"
+              alt="Advokatur-KuK Logo"
+              width={200}
+              height={70}
+              className="h-16 w-auto"
+              style={{ backgroundColor: 'transparent' }}
+              priority
+            />
+          </Link>
+
+          {/* Mobile: Hamburger Button (left) */}
           <button
             className="md:hidden relative w-10 h-10 flex items-center justify-center z-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <div className="w-6 h-4 relative flex flex-col justify-between">
               <span
@@ -70,60 +130,174 @@ export default function Navbar() {
             </div>
           </button>
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center z-50">
-            <span
-              className="text-xl font-bold tracking-wide transition-colors duration-300"
-              style={{ color: mobileMenuOpen ? 'white' : 'var(--primary)' }}
-            >
-              Advokatur-KuK
-            </span>
+          {/* Mobile: Logo (center) */}
+          <Link href="/" className="md:hidden flex items-center z-50" style={{ backgroundColor: 'transparent' }}>
+            <Image
+              src="/images/Logo-KuK(1).png"
+              alt="Advokatur-KuK Logo"
+              width={160}
+              height={55}
+              className="h-12 w-auto"
+              style={{ backgroundColor: 'transparent' }}
+              priority
+            />
           </Link>
+
+          {/* Center: Navigation Links - Desktop */}
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-center gap-1" style={{ marginLeft: '3rem' }}>
+              {navItems.map((item) => {
+                const isActive = pathname === item.href || (item.dropdown && item.dropdown.some(sub => pathname === sub.href));
+                return (
+                  <div 
+                    key={item.name} 
+                    className="relative group"
+                    onMouseEnter={() => item.dropdown && handleMouseEnter(item.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`nav-link-styled flex items-center gap-1 ${isActive ? 'nav-link-active' : ''}`}
+                    >
+                      {item.name}
+                      {item.dropdown && (
+                        <svg 
+                          className={`w-4 h-4 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`} 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </Link>
+                    
+                    {/* Dropdown Menu */}
+                    {item.dropdown && openDropdown === item.name && (
+                      <div 
+                        className="absolute top-full left-0 mt-3 w-72 bg-white rounded-2xl overflow-hidden"
+                        style={{ 
+                          zIndex: 100,
+                          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+                          border: '1px solid rgba(212, 175, 55, 0.2)',
+                          animation: 'dropdownFadeIn 0.3s ease-out',
+                          transformOrigin: 'top'
+                        }}
+                      >
+                        <style>{`
+                          @keyframes dropdownFadeIn {
+                            from {
+                              opacity: 0;
+                              transform: translateY(-10px) scale(0.95);
+                            }
+                            to {
+                              opacity: 1;
+                              transform: translateY(0) scale(1);
+                            }
+                          }
+                        `}</style>
+                        
+                        <div style={{ 
+                          padding: '1rem 0',
+                          background: 'linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)'
+                        }}>
+                          {item.dropdown.map((subItem, index) => (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              className="flex items-center gap-4 px-6 py-4 text-base font-medium transition-all duration-300"
+                              style={{ 
+                                color: pathname === subItem.href ? 'var(--gold)' : 'var(--primary)',
+                                backgroundColor: pathname === subItem.href ? 'rgba(212, 175, 55, 0.08)' : 'transparent',
+                                borderLeft: pathname === subItem.href ? '4px solid var(--gold)' : '4px solid transparent',
+                                position: 'relative' as const,
+                                marginBottom: index < item.dropdown.length - 1 ? '0.25rem' : '0'
+                              }}
+                              onMouseEnter={(e) => {
+                                if (pathname !== subItem.href) {
+                                  e.currentTarget.style.backgroundColor = 'rgba(212, 175, 55, 0.06)';
+                                  e.currentTarget.style.color = 'var(--gold)';
+                                  e.currentTarget.style.borderLeft = '4px solid var(--gold)';
+                                  e.currentTarget.style.transform = 'translateX(4px)';
+                                }
+                              }}
+                              onMouseLeave={(e) => {
+                                if (pathname !== subItem.href) {
+                                  e.currentTarget.style.backgroundColor = 'transparent';
+                                  e.currentTarget.style.color = 'var(--primary)';
+                                  e.currentTarget.style.borderLeft = '4px solid transparent';
+                                  e.currentTarget.style.transform = 'translateX(0)';
+                                }
+                              }}
+                            >
+                              <svg 
+                                className="w-5 h-5 flex-shrink-0" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                                style={{ 
+                                  color: pathname === subItem.href ? 'var(--gold)' : '#9ca3af',
+                                  transition: 'all 0.3s ease'
+                                }}
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                              </svg>
+                              <span style={{ letterSpacing: '0.02em' }}>{subItem.name}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right: Spacer (invisible) - keeps layout symmetric */}
+          <div className="hidden md:block w-[180px]"></div>
+
+          {/* Mobile: Spacer */}
+          <div className="md:hidden w-10"></div>
         </div>
       </div>
 
-      {/* Minimal Mobile Menu */}
+      {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 transition-all duration-400 ease-in-out ${
-          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        className={`fixed inset-0 bg-white z-40 transition-transform duration-300 ease-in-out md:hidden ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
-        style={{ backgroundColor: 'var(--primary)' }}
+        style={{ 
+          background: 'linear-gradient(135deg, #0a1f3d 0%, #0f2d52 50%, #1a4d7a 100%)',
+          paddingTop: '5rem'
+        }}
       >
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          <nav className="flex flex-col items-center gap-12">
-            {navItems.map((item, index) => (
+        <div className="flex flex-col px-6 py-8 space-y-2">
+          {navItems.map((item) => (
+            <div key={item.name}>
               <Link
-                key={item.name}
                 href={item.href}
-                className={`text-2xl tracking-wide text-white transition-all duration-300 hover:opacity-60 ${
-                  mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-                style={{
-                  transitionDelay: mobileMenuOpen ? `${index * 80}ms` : '0ms',
-                }}
+                className="block py-3 text-xl font-semibold text-white hover:text-yellow-400 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
-            ))}
-          </nav>
-
-        </div>
-
-        {/* Button ganz unten */}
-        <div
-          className={`absolute bottom-12 left-1/2 -translate-x-1/2 transition-all duration-300 ${
-            mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-          style={{ transitionDelay: mobileMenuOpen ? '350ms' : '0ms' }}
-        >
-          <Link
-            href="/kontakt"
-            className="btn-gold"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Kontakt aufnehmen
-          </Link>
+              {item.dropdown && (
+                <div className="pl-4 space-y-2 mt-2">
+                  {item.dropdown.map((subItem) => (
+                    <Link
+                      key={subItem.name}
+                      href={subItem.href}
+                      className="block py-2 text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </nav>

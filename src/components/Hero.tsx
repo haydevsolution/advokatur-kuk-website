@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SplitText from './SplitText';
 
 // Professionelle Anwaltsbilder für die Diashow
 const heroImages = [
@@ -79,27 +80,97 @@ export default function Hero() {
           ></div>
 
           {/* Begrüßung */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg text-center">
-            Willkommen bei
-            <br />
-            <span style={{ color: 'var(--gold)' }}>Advokatur-KuK</span>
-          </h1>
+          <div className="mb-8" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <SplitText
+              text="Welcome to"
+              tag="h1"
+              delay={50}
+              duration={1}
+              ease="power3.out"
+              splitType="words"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="center"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg"
+            />
+            <div style={{ color: 'var(--gold)' }}>
+              <SplitText
+                text="Advokatur-KuK"
+                tag="h1"
+                delay={50}
+                duration={1}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 50, rotateX: -90 }}
+                to={{ opacity: 1, y: 0, rotateX: 0 }}
+                textAlign="center"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg"
+              />
+            </div>
+          </div>
 
-          <p className="text-xl md:text-2xl text-gray-100 mb-8 drop-shadow-md text-center">
-            Kompetente Rechtsberatung mit persönlicher Betreuung
-          </p>
+          {/* Drei Services - untereinander */}
+          <div className="mb-8" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
+            <SplitText
+              text="Dispute Resolution"
+              tag="h2"
+              delay={40}
+              duration={0.8}
+              ease="power2.out"
+              splitType="words"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="center"
+              className="text-2xl md:text-3xl font-bold text-white drop-shadow-md"
+            />
+            <SplitText
+              text="Legal Advice"
+              tag="h2"
+              delay={40}
+              duration={0.8}
+              ease="power2.out"
+              splitType="words"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="center"
+              className="text-2xl md:text-3xl font-bold text-white drop-shadow-md"
+            />
+            <SplitText
+              text="Compliance"
+              tag="h2"
+              delay={40}
+              duration={0.8}
+              ease="power2.out"
+              splitType="words"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="center"
+              className="text-2xl md:text-3xl font-bold text-white drop-shadow-md"
+            />
+          </div>
 
-          <p className="text-lg text-gray-200 mb-14 max-w-lg drop-shadow-md leading-relaxed text-center">
-            Wir stehen Ihnen mit Erfahrung, Engagement und Expertise zur Seite. Vertrauen Sie auf unsere langjährige Erfahrung in allen Rechtsfragen.
-          </p>
+          <div style={{ marginTop: '2rem', marginBottom: '3rem' }}>
+            <SplitText
+              text="The Swiss expert with in-depth experience, and a name you can trust."
+              tag="p"
+              delay={30}
+              duration={0.7}
+              ease="power2.out"
+              splitType="words"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="center"
+              className="text-lg md:text-xl text-gray-200 font-light max-w-3xl drop-shadow-md leading-relaxed"
+            />
+          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center" style={{ marginTop: '1rem' }}>
             <Link href="/kontakt" className="btn-gold">
-              Kontakt aufnehmen
+              Get in Touch
             </Link>
-            <Link href="/rechtsgebiete" className="btn-outline">
-              Unsere Rechtsgebiete
+            <Link href="/services" className="btn-outline">
+              Our Services
             </Link>
           </div>
         </div>
