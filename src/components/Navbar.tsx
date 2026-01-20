@@ -81,22 +81,26 @@ export default function Navbar() {
     <nav 
       className="shadow-sm fixed w-full top-0 z-50" 
       style={{ 
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(10, 31, 61, 0.75)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '2px solid rgba(255, 255, 255, 0.5)',
+        borderBottomLeftRadius: '16px',
+        borderBottomRightRadius: '16px',
         transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
         transition: 'transform 0.3s ease-in-out'
       }}
     >
       <div className="max-w-7xl mx-auto px-10 lg:px-12">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20">
 
           {/* Left: Logo */}
-          <Link href="/" className="hidden md:flex items-center group transition-transform duration-300 hover:scale-105" style={{ marginLeft: '2rem', backgroundColor: 'transparent' }}>
+          <Link href="/" className="hidden md:flex items-center group transition-transform duration-300 hover:scale-105 w-[240px]" style={{ backgroundColor: 'transparent', marginLeft: '38px' }}>
             <Image
               src="/images/Logo-KuK(1).png"
               alt="Advokatur-KuK Logo"
-              width={200}
-              height={70}
-              className="h-16 w-auto"
+              width={180}
+              height={60}
+              className="h-14 w-auto"
               style={{ backgroundColor: 'transparent' }}
               priority
             />
@@ -113,19 +117,19 @@ export default function Navbar() {
                 className={`block h-0.5 transition-all duration-300 ease-in-out origin-center ${
                   mobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''
                 }`}
-                style={{ backgroundColor: mobileMenuOpen ? 'white' : 'var(--primary)' }}
+                style={{ backgroundColor: '#ffffff' }}
               />
               <span
                 className={`block h-0.5 transition-all duration-300 ease-in-out ${
                   mobileMenuOpen ? 'opacity-0' : 'opacity-100'
                 }`}
-                style={{ backgroundColor: 'var(--primary)' }}
+                style={{ backgroundColor: '#ffffff' }}
               />
               <span
                 className={`block h-0.5 transition-all duration-300 ease-in-out origin-center ${
                   mobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''
                 }`}
-                style={{ backgroundColor: mobileMenuOpen ? 'white' : 'var(--primary)' }}
+                style={{ backgroundColor: '#ffffff' }}
               />
             </div>
           </button>
@@ -135,9 +139,9 @@ export default function Navbar() {
             <Image
               src="/images/Logo-KuK(1).png"
               alt="Advokatur-KuK Logo"
-              width={160}
-              height={55}
-              className="h-12 w-auto"
+              width={140}
+              height={48}
+              className="h-10 w-auto"
               style={{ backgroundColor: 'transparent' }}
               priority
             />
@@ -145,7 +149,7 @@ export default function Navbar() {
 
           {/* Center: Navigation Links - Desktop */}
           <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex items-center gap-1" style={{ marginLeft: '3rem' }}>
+            <div className="flex items-center gap-1">
               {navItems.map((item) => {
                 const isActive = pathname === item.href || (item.dropdown && item.dropdown.some(sub => pathname === sub.href));
                 return (
@@ -255,7 +259,7 @@ export default function Navbar() {
           </div>
 
           {/* Right: Spacer (invisible) - keeps layout symmetric */}
-          <div className="hidden md:block w-[180px]"></div>
+          <div className="hidden md:block w-[240px]"></div>
 
           {/* Mobile: Spacer */}
           <div className="md:hidden w-10"></div>

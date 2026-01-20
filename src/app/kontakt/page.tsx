@@ -46,9 +46,9 @@ export default function KontaktPage() {
             delay={50}
             duration={1}
             ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, scale: 0.5, rotateZ: -180 }}
-            to={{ opacity: 1, scale: 1, rotateZ: 0 }}
+            splitType="words"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
             textAlign="center"
             style={{ 
               fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
