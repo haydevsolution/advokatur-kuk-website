@@ -2,8 +2,74 @@
 
 import Link from "next/link";
 import SplitText from "@/components/SplitText";
+import { useState } from "react";
 
 export default function KontaktPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+    privacyConsent: false
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
+    
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          privacyConsent: false
+        });
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(data.error || 'Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       {/* Page Header */}
@@ -91,7 +157,7 @@ export default function KontaktPage() {
                 border: '1px solid #e5e7eb'
               }}
             >
-              <form className="space-y-8">
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 {/* Name Fields */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -100,6 +166,9 @@ export default function KontaktPage() {
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       required
                       placeholder="Your first name"
                       className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
@@ -124,6 +193,9 @@ export default function KontaktPage() {
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       required
                       placeholder="Your last name"
                       className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
@@ -152,6 +224,9 @@ export default function KontaktPage() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                       placeholder="your@email.com"
                       className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
@@ -176,6 +251,9 @@ export default function KontaktPage() {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="+41 123 456789"
                       className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
                       style={{ 
@@ -202,9 +280,12 @@ export default function KontaktPage() {
                   </label>
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
                     required
                     placeholder="What is it about?"
-                    className="w-full px-5 py-4 border-2 rounded-xl transition-all duration-300 text-gray-700"
+                    className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
                     style={{ 
                       borderColor: '#e5e7eb',
                       fontSize: '1rem',
@@ -227,10 +308,13 @@ export default function KontaktPage() {
                     YOUR MESSAGE *
                   </label>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                     rows={7}
                     placeholder="Describe your legal matter in detail..."
-                    className="w-full px-5 py-4 border-2 rounded-xl transition-all duration-300 resize-none text-gray-700"
+                    className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 resize-none text-gray-700"
                     style={{ 
                       borderColor: '#e5e7eb',
                       fontSize: '1rem',
@@ -258,6 +342,9 @@ export default function KontaktPage() {
                 >
                   <input
                     type="checkbox"
+                    name="privacyConsent"
+                    checked={formData.privacyConsent}
+                    onChange={handleChange}
                     required
                     id="privacy"
                     className="mt-1 w-5 h-5 rounded border-gray-300 cursor-pointer"
@@ -276,30 +363,78 @@ export default function KontaktPage() {
                   </label>
                 </div>
 
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="p-5 rounded-xl" style={{ backgroundColor: '#d1fae5', border: '2px solid #10b981' }}>
+                    <div className="flex items-center gap-3">
+                      <svg className="w-6 h-6 flex-shrink-0" style={{ color: '#10b981' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <p className="font-bold" style={{ color: '#065f46' }}>Message sent successfully!</p>
+                        <p className="text-sm" style={{ color: '#047857' }}>We'll get back to you as soon as possible.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="p-5 rounded-xl" style={{ backgroundColor: '#fee2e2', border: '2px solid #ef4444' }}>
+                    <div className="flex items-center gap-3">
+                      <svg className="w-6 h-6 flex-shrink-0" style={{ color: '#ef4444' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <p className="font-bold" style={{ color: '#991b1b' }}>Failed to send message</p>
+                        <p className="text-sm" style={{ color: '#dc2626' }}>{errorMessage || 'Please try again later.'}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full text-lg font-bold py-5 rounded-xl transition-all duration-300"
                   style={{
-                    background: 'linear-gradient(135deg, var(--gold) 0%, #c9a961 100%)',
+                    background: isSubmitting ? '#9ca3af' : 'linear-gradient(135deg, var(--gold) 0%, #c9a961 100%)',
                     color: 'white',
                     boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)',
-                    letterSpacing: '0.5px'
+                    letterSpacing: '0.5px',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                    opacity: isSubmitting ? 0.7 : 1
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 25px rgba(212, 175, 55, 0.4)';
+                    if (!isSubmitting) {
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(212, 175, 55, 0.4)';
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.3)';
+                    if (!isSubmitting) {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.3)';
+                    }
                   }}
                 >
                   <span className="flex items-center justify-center gap-3">
-                    Send Message
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </>
+                    )}
                   </span>
                 </button>
               </form>

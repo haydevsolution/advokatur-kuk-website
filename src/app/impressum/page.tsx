@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 
 export default function ImpressumPage() {
   return (
@@ -66,9 +67,9 @@ export default function ImpressumPage() {
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600">Advokatur-KuK</p>
-                  <p className="text-gray-600">[Name der Anwältin]</p>
-                  <p className="text-gray-600">Musterstraße 123</p>
-                  <p className="text-gray-600">12345 Musterstadt</p>
+                  <p className="text-gray-600">Katalin Nemeth</p>
+                  <p className="text-gray-600">Hauptstrasse 77</p>
+                  <p className="text-gray-600">6260 Reiden, Switzerland</p>
                 </div>
               </div>
 
@@ -78,9 +79,7 @@ export default function ImpressumPage() {
                   Kontakt
                 </h2>
                 <div className="gold-border">
-                  <p className="text-gray-600">Telefon: +49 123 456789</p>
-                  <p className="text-gray-600">Telefax: +49 123 456780</p>
-                  <p className="text-gray-600">E-Mail: info@advokatur-kuk.de</p>
+                  <p className="text-gray-600">Please use our <Link href="/kontakt" className="font-semibold hover:underline" style={{ color: 'var(--gold)' }}>contact form</Link> to get in touch with us.</p>
                 </div>
               </div>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 
 export default function DatenschutzPage() {
   return (
@@ -102,11 +103,10 @@ export default function DatenschutzPage() {
                     Verantwortlich für die Datenverarbeitung auf dieser Website ist:
                   </p>
                   <p className="text-gray-600">Advokatur-KuK</p>
-                  <p className="text-gray-600">[Name der Anwältin]</p>
-                  <p className="text-gray-600">Musterstraße 123</p>
-                  <p className="text-gray-600">12345 Musterstadt</p>
-                  <p className="text-gray-600 mt-2">Telefon: +49 123 456789</p>
-                  <p className="text-gray-600">E-Mail: info@advokatur-kuk.de</p>
+                  <p className="text-gray-600">Katalin Nemeth</p>
+                  <p className="text-gray-600">Hauptstrasse 77</p>
+                  <p className="text-gray-600">6260 Reiden, Switzerland</p>
+                  <p className="text-gray-600 mt-4">Für Kontaktanfragen nutzen Sie bitte unser <Link href="/kontakt" className="font-semibold hover:underline" style={{ color: 'var(--gold)' }}>Kontaktformular</Link>.</p>
                 </div>
               </div>
 

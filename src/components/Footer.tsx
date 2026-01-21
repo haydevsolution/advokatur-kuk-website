@@ -93,9 +93,10 @@ export default function Footer() {
               <p style={{ color: '#4b5563', marginBottom: '1.5rem', lineHeight: '1.625' }}>
                 Your competent legal advice for all legal matters.
               </p>
-              <div style={{ color: '#4b5563' }}>
-                <p style={{ marginBottom: '0.5rem' }}>Tel: +49 123 456789</p>
-                <p>Email: info@advokatur-kuk.de</p>
+              <div style={{ color: '#4b5563', lineHeight: '1.8' }}>
+                <p style={{ fontWeight: '600', marginBottom: '0.5rem', color: 'var(--primary)' }}>Address:</p>
+                <p style={{ marginBottom: '0.25rem' }}>Hauptstrasse 77</p>
+                <p>6260 Reiden, Switzerland</p>
               </div>
             </div>
 
