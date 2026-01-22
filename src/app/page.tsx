@@ -39,14 +39,46 @@ export default function Home() {
               />
               <div className="gold-border">
                 <p className="text-lg text-gray-300" style={{ marginBottom: '1.5rem' }}>
-                  At Advokatur-KuK, we combine legal expertise with personal care. Our goal is to find the best solution for you – competent, dedicated, and trustworthy.
+                  Katalin combines legal expertise with diligence. Her goal is to find the best solution for you – competent, dedicated, and confidentially.
                 </p>
                 <p className="text-lg text-gray-300" style={{ marginBottom: '3rem' }}>
-                  With years of experience and a deep understanding of our clients' needs, we stand by your side in all legal matters.
+                  With years of experience and a deep understanding of her clients' needs, she stands by your side in all legal matters.
                 </p>
                 <div style={{ marginTop: '2rem' }}>
-                  <Link href="/about-us" className="btn-gold">
+                  <Link 
+                    href="/about-us" 
+                    style={{ 
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      padding: '0.875rem 2rem',
+                      backgroundColor: 'transparent',
+                      color: 'var(--gold)',
+                      border: '2px solid var(--gold)',
+                      borderRadius: '50px',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--gold)';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.transform = 'translateX(5px)';
+                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = 'var(--gold)';
+                      e.currentTarget.style.transform = 'translateX(0)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
                     Learn more about us
+                    <svg style={{ width: '18px', height: '18px', transition: 'transform 0.3s ease' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </Link>
                 </div>
               </div>
@@ -86,8 +118,19 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-10" style={{ maxWidth: '80rem', width: '100%' }}>
               {[
                 {
-                  title: "Platzhalter",
-                  description: "Platzhalter",
+                  title: "Dispute Resolution",
+                  description: "Expert support through challenging legal disputes",
+                  href: "/services#dispute-resolution",
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Legal Advice",
+                  description: "Comprehensive business and personal legal guidance",
+                  href: "/services#legal-advice",
                   icon: (
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -95,25 +138,22 @@ export default function Home() {
                   ),
                 },
                 {
-                  title: "Platzhalter",
-                  description: "Platzhalter",
+                  title: "Compliance",
+                  description: "Strategic compliance measures for your business",
+                  href: "/services#compliance",
                   icon: (
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: "Platzhalter",
-                  description: "Platzhalter",
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   ),
                 },
               ].map((item, index) => (
-                <div key={index} className="card hover:shadow-xl transition-shadow" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <Link 
+                  key={index} 
+                  href={item.href}
+                  className="card hover:shadow-xl transition-all duration-300 hover:scale-105" 
+                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', textDecoration: 'none' }}
+                >
                   <div
                     style={{ 
                       width: '64px', 
@@ -133,7 +173,7 @@ export default function Home() {
                     {item.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -151,7 +191,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div style={{ textAlign: 'center', marginBottom: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <BlurText
-              text="Why Advokatur-KuK?"
+              text="Why Advokatur KuK AG (in Gründung)?"
               delay={150}
               animateBy="words"
               direction="top"
@@ -159,7 +199,7 @@ export default function Home() {
               style={{ color: '#ffffff', marginBottom: '1.5rem' } as any}
             />
             <BlurText
-              text="We focus on quality, trust, and personal care."
+              text="Katalin focuses on quality, effectiveness and confidentiality."
               delay={120}
               animateBy="words"
               direction="top"

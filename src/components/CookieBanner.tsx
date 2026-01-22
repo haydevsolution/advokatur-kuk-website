@@ -37,14 +37,14 @@ export default function CookieBanner() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex-1">
                 <h3 className="text-white font-bold text-lg mb-2">
-                  Cookie-Hinweis
+                  Cookie Notice
                 </h3>
                 <p className="text-gray-300 text-sm">
-                  Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
-                  Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.
-                  Weitere Informationen finden Sie in unserer{' '}
+                  We use cookies to provide you with the best possible experience on our website.
+                  By using our website you agree to the use of cookies.
+                  For more information, please see our{' '}
                   <Link href="/datenschutz" className="underline hover:text-white" style={{ color: 'var(--gold)' }}>
-                    Datenschutzerklärung
+                    Privacy Policy
                   </Link>.
                 </p>
               </div>
@@ -53,7 +53,7 @@ export default function CookieBanner() {
                   onClick={acceptCookies}
                   className="btn-gold px-6 py-2 font-semibold"
                 >
-                  Akzeptieren
+                  Accept
                 </button>
               </div>
             </div>
@@ -67,8 +67,8 @@ export default function CookieBanner() {
           onClick={openBanner}
           className="fixed bottom-4 right-4 z-50 p-3 rounded-full shadow-lg transition-all hover:scale-110"
           style={{ backgroundColor: 'var(--primary)' }}
-          aria-label="Cookie-Einstellungen öffnen"
-          title="Cookie-Einstellungen"
+          aria-label="Open cookie settings"
+          title="Cookie Settings"
         >
           <svg
             className="w-5 h-5 text-white"

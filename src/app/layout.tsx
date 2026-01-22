@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Advokatur-KuK | Ihre Rechtsanwaltskanzlei",
-  description: "Kompetente Rechtsberatung mit persönlicher Betreuung. Advokatur-KuK steht Ihnen mit Erfahrung und Expertise in allen Rechtsfragen zur Seite.",
-  keywords: "Rechtsanwalt, Kanzlei, Rechtsberatung, Anwalt, Advokatur, KuK",
+  title: "Advokatur KuK AG (in Gründung) | Your Law Firm",
+  description: "Competent legal advice with personal care. Advokatur KuK AG (in Gründung) stands by your side with experience and expertise in all legal matters.",
+  keywords: "Lawyer, Law Firm, Legal Advice, Attorney, Advokatur, KuK",
 };
 
 export default function RootLayout({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollToTop />
         <Navbar />
         <main className="pt-20">
           {children}

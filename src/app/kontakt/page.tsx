@@ -139,11 +139,11 @@ export default function KontaktPage() {
             {/* Form Header */}
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                Send us a Message
+                Send us a message
               </h2>
               <div style={{ height: '4px', width: '80px', backgroundColor: 'var(--gold)', margin: '0 auto 1.5rem' }}></div>
               <p className="text-lg" style={{ color: '#6b7280' }}>
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and We will get back to you as soon as possible.
               </p>
             </div>
 
@@ -151,17 +151,17 @@ export default function KontaktPage() {
             <div 
               style={{ 
                 background: 'white',
-                borderRadius: '24px',
-                padding: '3rem',
+                borderRadius: '16px',
+                padding: '2.5rem 3rem',
                 boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
                 border: '1px solid #e5e7eb'
               }}
             >
-              <form className="space-y-8" onSubmit={handleSubmit}>
+              <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} onSubmit={handleSubmit}>
                 {/* Name Fields */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-x-6 gap-y-6">
                   <div>
-                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px', fontSize: '0.875rem' }}>
                       FIRST NAME *
                     </label>
                     <input
@@ -171,24 +171,29 @@ export default function KontaktPage() {
                       onChange={handleChange}
                       required
                       placeholder="Your first name"
-                      className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
+                      autoComplete="off"
+                      className="w-full border-2 rounded-lg transition-all duration-300 text-gray-700"
                       style={{ 
                         borderColor: '#e5e7eb',
                         fontSize: '1rem',
-                        backgroundColor: 'white'
+                        backgroundColor: '#fafafa',
+                        lineHeight: '1.5',
+                        padding: '0.875rem 1rem'
                       }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'var(--gold)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'white';
+                        e.currentTarget.style.boxShadow = '0 0 0 4px rgba(212, 175, 55, 0.12)';
                       }}
                       onBlur={(e) => {
                         e.currentTarget.style.borderColor = '#e5e7eb';
+                        e.currentTarget.style.backgroundColor = '#fafafa';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px', fontSize: '0.875rem' }}>
                       LAST NAME *
                     </label>
                     <input
@@ -198,18 +203,23 @@ export default function KontaktPage() {
                       onChange={handleChange}
                       required
                       placeholder="Your last name"
-                      className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
+                      autoComplete="off"
+                      className="w-full border-2 rounded-lg transition-all duration-300 text-gray-700"
                       style={{ 
                         borderColor: '#e5e7eb',
                         fontSize: '1rem',
-                        backgroundColor: 'white'
+                        backgroundColor: '#fafafa',
+                        lineHeight: '1.5',
+                        padding: '0.875rem 1rem'
                       }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'var(--gold)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'white';
+                        e.currentTarget.style.boxShadow = '0 0 0 4px rgba(212, 175, 55, 0.12)';
                       }}
                       onBlur={(e) => {
                         e.currentTarget.style.borderColor = '#e5e7eb';
+                        e.currentTarget.style.backgroundColor = '#fafafa';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
@@ -217,9 +227,9 @@ export default function KontaktPage() {
                 </div>
 
                 {/* Contact Fields */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-x-6 gap-y-6">
                   <div>
-                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px', fontSize: '0.875rem' }}>
                       EMAIL *
                     </label>
                     <input
@@ -229,24 +239,29 @@ export default function KontaktPage() {
                       onChange={handleChange}
                       required
                       placeholder="your@email.com"
-                      className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
+                      autoComplete="off"
+                      className="w-full border-2 rounded-lg transition-all duration-300 text-gray-700"
                       style={{ 
                         borderColor: '#e5e7eb',
                         fontSize: '1rem',
-                        backgroundColor: 'white'
+                        backgroundColor: '#fafafa',
+                        lineHeight: '1.5',
+                        padding: '0.875rem 1rem'
                       }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'var(--gold)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'white';
+                        e.currentTarget.style.boxShadow = '0 0 0 4px rgba(212, 175, 55, 0.12)';
                       }}
                       onBlur={(e) => {
                         e.currentTarget.style.borderColor = '#e5e7eb';
+                        e.currentTarget.style.backgroundColor = '#fafafa';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                    <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px', fontSize: '0.875rem' }}>
                       PHONE
                     </label>
                     <input
@@ -255,18 +270,23 @@ export default function KontaktPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+41 123 456789"
-                      className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
+                      autoComplete="off"
+                      className="w-full border-2 rounded-lg transition-all duration-300 text-gray-700"
                       style={{ 
                         borderColor: '#e5e7eb',
                         fontSize: '1rem',
-                        backgroundColor: 'white'
+                        backgroundColor: '#fafafa',
+                        lineHeight: '1.5',
+                        padding: '0.875rem 1rem'
                       }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'var(--gold)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'white';
+                        e.currentTarget.style.boxShadow = '0 0 0 4px rgba(212, 175, 55, 0.12)';
                       }}
                       onBlur={(e) => {
                         e.currentTarget.style.borderColor = '#e5e7eb';
+                        e.currentTarget.style.backgroundColor = '#fafafa';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
@@ -275,7 +295,7 @@ export default function KontaktPage() {
 
                 {/* Subject */}
                 <div>
-                  <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                  <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px', fontSize: '0.875rem' }}>
                     SUBJECT *
                   </label>
                   <input
@@ -285,18 +305,23 @@ export default function KontaktPage() {
                     onChange={handleChange}
                     required
                     placeholder="What is it about?"
-                    className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 text-gray-700"
+                    autoComplete="off"
+                    className="w-full border-2 rounded-lg transition-all duration-300 text-gray-700"
                     style={{ 
                       borderColor: '#e5e7eb',
                       fontSize: '1rem',
-                      backgroundColor: 'white'
+                      backgroundColor: '#fafafa',
+                      lineHeight: '1.5',
+                      padding: '0.875rem 1rem'
                     }}
                     onFocus={(e) => {
                       e.currentTarget.style.borderColor = 'var(--gold)';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.1)';
+                      e.currentTarget.style.backgroundColor = 'white';
+                      e.currentTarget.style.boxShadow = '0 0 0 4px rgba(212, 175, 55, 0.12)';
                     }}
                     onBlur={(e) => {
                       e.currentTarget.style.borderColor = '#e5e7eb';
+                      e.currentTarget.style.backgroundColor = '#fafafa';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   />
@@ -304,7 +329,7 @@ export default function KontaktPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                  <label className="block text-sm font-bold mb-3" style={{ color: 'var(--primary)', letterSpacing: '0.5px', fontSize: '0.875rem' }}>
                     YOUR MESSAGE *
                   </label>
                   <textarea
@@ -312,21 +337,25 @@ export default function KontaktPage() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={7}
+                    rows={6}
                     placeholder="Describe your legal matter in detail..."
-                    className="w-full px-6 py-5 border-2 rounded-xl transition-all duration-300 resize-none text-gray-700"
+                    autoComplete="off"
+                    className="w-full border-2 rounded-lg transition-all duration-300 resize-none text-gray-700"
                     style={{ 
                       borderColor: '#e5e7eb',
                       fontSize: '1rem',
                       lineHeight: '1.6',
-                      backgroundColor: 'white'
+                      backgroundColor: '#fafafa',
+                      padding: '0.875rem 1rem'
                     }}
                     onFocus={(e) => {
                       e.currentTarget.style.borderColor = 'var(--gold)';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.1)';
+                      e.currentTarget.style.backgroundColor = 'white';
+                      e.currentTarget.style.boxShadow = '0 0 0 4px rgba(212, 175, 55, 0.12)';
                     }}
                     onBlur={(e) => {
                       e.currentTarget.style.borderColor = '#e5e7eb';
+                      e.currentTarget.style.backgroundColor = '#fafafa';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   ></textarea>
@@ -334,7 +363,7 @@ export default function KontaktPage() {
 
                 {/* Privacy Checkbox */}
                 <div 
-                  className="flex items-start gap-4 p-5 rounded-xl border-2 transition-all duration-300" 
+                  className="flex items-center gap-4 p-4 rounded-lg border-2 transition-all duration-300" 
                   style={{ 
                     borderColor: '#e5e7eb',
                     backgroundColor: '#f8f9fa'
@@ -347,10 +376,10 @@ export default function KontaktPage() {
                     onChange={handleChange}
                     required
                     id="privacy"
-                    className="mt-1 w-5 h-5 rounded border-gray-300 cursor-pointer"
+                    className="w-5 h-5 rounded border-gray-300 cursor-pointer flex-shrink-0"
                     style={{ accentColor: 'var(--gold)' }}
                   />
-                  <label htmlFor="privacy" className="text-sm leading-relaxed cursor-pointer" style={{ color: '#4b5563' }}>
+                  <label htmlFor="privacy" className="text-sm leading-relaxed cursor-pointer" style={{ color: '#4b5563', lineHeight: '1.6' }}>
                     I have read the{' '}
                     <Link
                       href="/datenschutz"
@@ -365,21 +394,21 @@ export default function KontaktPage() {
 
                 {/* Status Messages */}
                 {submitStatus === 'success' && (
-                  <div className="p-5 rounded-xl" style={{ backgroundColor: '#d1fae5', border: '2px solid #10b981' }}>
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#d1fae5', border: '2px solid #10b981' }}>
                     <div className="flex items-center gap-3">
                       <svg className="w-6 h-6 flex-shrink-0" style={{ color: '#10b981' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <div>
                         <p className="font-bold" style={{ color: '#065f46' }}>Message sent successfully!</p>
-                        <p className="text-sm" style={{ color: '#047857' }}>We'll get back to you as soon as possible.</p>
+                        <p className="text-sm" style={{ color: '#047857' }}>We will get back to you as soon as possible.</p>
                       </div>
                     </div>
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
-                  <div className="p-5 rounded-xl" style={{ backgroundColor: '#fee2e2', border: '2px solid #ef4444' }}>
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#fee2e2', border: '2px solid #ef4444' }}>
                     <div className="flex items-center gap-3">
                       <svg className="w-6 h-6 flex-shrink-0" style={{ color: '#ef4444' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -396,46 +425,61 @@ export default function KontaktPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full text-lg font-bold py-5 rounded-xl transition-all duration-300"
+                  className="group"
                   style={{
-                    background: isSubmitting ? '#9ca3af' : 'linear-gradient(135deg, var(--gold) 0%, #c9a961 100%)',
-                    color: 'white',
-                    boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)',
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.75rem',
+                    padding: '1.125rem 2.5rem',
+                    fontSize: '1.125rem',
+                    fontWeight: 700,
                     letterSpacing: '0.5px',
+                    borderRadius: '50px',
+                    border: '2px solid var(--gold)',
+                    background: isSubmitting ? '#9ca3af' : 'transparent',
+                    color: isSubmitting ? 'white' : 'var(--gold)',
                     cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    opacity: isSubmitting ? 0.7 : 1
+                    opacity: isSubmitting ? 0.7 : 1,
+                    marginTop: '1.5rem',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                   onMouseEnter={(e) => {
                     if (!isSubmitting) {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(212, 175, 55, 0.4)';
+                      e.currentTarget.style.background = 'var(--gold)';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.transform = 'translateY(-3px)';
+                      e.currentTarget.style.boxShadow = '0 15px 35px rgba(212, 175, 55, 0.4)';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!isSubmitting) {
+                      e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = 'var(--gold)';
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.3)';
+                      e.currentTarget.style.boxShadow = 'none';
                     }
                   }}
                 >
-                  <span className="flex items-center justify-center gap-3">
-                    {isSubmitting ? (
-                      <>
-                        <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </>
-                    )}
-                  </span>
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <svg style={{ width: '20px', height: '20px', transition: 'transform 0.3s ease' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
             </div>

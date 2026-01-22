@@ -15,13 +15,11 @@ const navItems = [
       { name: 'Compliance', href: '/services#compliance' }
     ]
   },
-  { name: 'About us', href: '/about-us' },
+  { name: 'About KuK', href: '/about-us' },
   { 
     name: 'References', 
     href: '/references',
     dropdown: [
-      { name: 'In-house Experience', href: '/references#in-house-experience' },
-      { name: 'ADR experience', href: '/references#adr-experience' },
       { name: 'Cases', href: '/references#cases' },
       { name: 'Publications', href: '/references#publications' }
     ]
@@ -32,6 +30,7 @@ const navItems = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
@@ -41,6 +40,7 @@ export default function Navbar() {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      setMobileDropdown(null); // Reset dropdown when menu closes
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -48,18 +48,26 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
+    let ticking = false;
+    let lastKnownScrollY = lastScrollY;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      lastKnownScrollY = window.scrollY;
       
-      if (currentScrollY < 10) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (lastKnownScrollY < 10) {
+            setIsVisible(true);
+          } else if (lastKnownScrollY > lastScrollY) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+          setLastScrollY(lastKnownScrollY);
+          ticking = false;
+        });
+        ticking = true;
       }
-      
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -96,7 +104,7 @@ export default function Navbar() {
             <Link href="/" className="hidden md:flex items-center group transition-transform duration-300 hover:scale-105 w-[240px]" style={{ backgroundColor: 'transparent', marginLeft: '38px' }}>
               <Image
                 src="/images/Logo-KuK(1).png"
-                alt="Advokatur-KuK Logo"
+                alt="Advokatur KuK Logo"
                 width={180}
                 height={60}
                 className="h-14 w-auto"
@@ -163,7 +171,7 @@ export default function Navbar() {
             >
               <Image
                 src="/images/Logo-KuK(1).png"
-                alt="Advokatur-KuK Logo"
+                alt="Advokatur KuK Logo"
                 width={140}
                 height={48}
                 className="h-10 w-auto"
@@ -297,7 +305,8 @@ export default function Navbar() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: 'white',
+            backgroundColor: 'rgba(10, 31, 61, 0.95)',
+            backdropFilter: 'blur(10px)',
             zIndex: 100000,
             paddingTop: '100px',
             overflowY: 'auto'
@@ -327,7 +336,7 @@ export default function Navbar() {
                   left: 0,
                   width: '100%',
                   height: '3px',
-                  backgroundColor: '#0f2d52',
+                  backgroundColor: '#ffffff',
                   transform: 'rotate(45deg)'
                 }} />
                 <span style={{ 
@@ -336,7 +345,7 @@ export default function Navbar() {
                   left: 0,
                   width: '100%',
                   height: '3px',
-                  backgroundColor: '#0f2d52',
+                  backgroundColor: '#ffffff',
                   transform: 'rotate(-45deg)'
                 }} />
               </div>
@@ -346,7 +355,7 @@ export default function Navbar() {
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
               <Image
                 src="/images/Logo-KuK(1).png"
-                alt="Advokatur-KuK Logo"
+                alt="Advokatur KuK Logo"
                 width={160}
                 height={55}
                 style={{ margin: '0 auto' }}
@@ -359,29 +368,61 @@ export default function Navbar() {
               
               {/* Services */}
               <div style={{ marginBottom: '25px' }}>
-                <Link 
-                  href="/services" 
-                  onClick={() => setMobileMenuOpen(false)}
+                <div 
                   style={{ 
-                    display: 'block',
-                    fontSize: '22px',
-                    fontWeight: 'bold',
-                    color: '#0f2d52',
-                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
                     padding: '15px 0',
-                    borderBottom: '2px solid #e5e7eb'
+                    borderBottom: '2px solid rgba(212, 175, 55, 0.3)',
+                    cursor: 'pointer'
                   }}
+                  onClick={() => setMobileDropdown(mobileDropdown === 'services' ? null : 'services')}
                 >
-                  Services
-                </Link>
-                <div style={{ paddingLeft: '20px', marginTop: '10px' }}>
-                  <Link href="/services#dispute-resolution" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
+                  <Link 
+                    href="/services" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMobileMenuOpen(false);
+                    }}
+                    style={{ 
+                      fontSize: '22px',
+                      fontWeight: 'bold',
+                      color: 'var(--gold)',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Services
+                  </Link>
+                  <svg 
+                    style={{ 
+                      width: '24px', 
+                      height: '24px', 
+                      color: 'var(--gold)',
+                      transition: 'transform 0.3s ease',
+                      transform: mobileDropdown === 'services' ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <div style={{ 
+                  paddingLeft: '20px', 
+                  marginTop: '10px',
+                  maxHeight: mobileDropdown === 'services' ? '200px' : '0',
+                  overflow: 'hidden',
+                  transition: 'max-height 0.3s ease'
+                }}>
+                  <Link href="/services#dispute-resolution" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#d1d5db', textDecoration: 'none' }}>
                     → Dispute Resolution
                   </Link>
-                  <Link href="/services#legal-advice" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
+                  <Link href="/services#legal-advice" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#d1d5db', textDecoration: 'none' }}>
                     → Legal Advice
                   </Link>
-                  <Link href="/services#compliance" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
+                  <Link href="/services#compliance" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#d1d5db', textDecoration: 'none' }}>
                     → Compliance
                   </Link>
                 </div>
@@ -396,44 +437,70 @@ export default function Navbar() {
                     display: 'block',
                     fontSize: '22px',
                     fontWeight: 'bold',
-                    color: '#0f2d52',
+                    color: 'var(--gold)',
                     textDecoration: 'none',
                     padding: '15px 0',
-                    borderBottom: '2px solid #e5e7eb'
+                    borderBottom: '2px solid rgba(212, 175, 55, 0.3)'
                   }}
                 >
-                  About us
+                  About KuK
                 </Link>
               </div>
 
               {/* References */}
               <div style={{ marginBottom: '25px' }}>
-                <Link 
-                  href="/references" 
-                  onClick={() => setMobileMenuOpen(false)}
+                <div 
                   style={{ 
-                    display: 'block',
-                    fontSize: '22px',
-                    fontWeight: 'bold',
-                    color: '#0f2d52',
-                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
                     padding: '15px 0',
-                    borderBottom: '2px solid #e5e7eb'
+                    borderBottom: '2px solid rgba(212, 175, 55, 0.3)',
+                    cursor: 'pointer'
                   }}
+                  onClick={() => setMobileDropdown(mobileDropdown === 'references' ? null : 'references')}
                 >
-                  References
-                </Link>
-                <div style={{ paddingLeft: '20px', marginTop: '10px' }}>
-                  <Link href="/references#in-house-experience" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
-                    → In-house Experience
+                  <Link 
+                    href="/references" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMobileMenuOpen(false);
+                    }}
+                    style={{ 
+                      fontSize: '22px',
+                      fontWeight: 'bold',
+                      color: 'var(--gold)',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    References
                   </Link>
-                  <Link href="/references#adr-experience" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
-                    → ADR experience
-                  </Link>
-                  <Link href="/references#cases" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
+                  <svg 
+                    style={{ 
+                      width: '24px', 
+                      height: '24px', 
+                      color: 'var(--gold)',
+                      transition: 'transform 0.3s ease',
+                      transform: mobileDropdown === 'references' ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <div style={{ 
+                  paddingLeft: '20px', 
+                  marginTop: '10px',
+                  maxHeight: mobileDropdown === 'references' ? '150px' : '0',
+                  overflow: 'hidden',
+                  transition: 'max-height 0.3s ease'
+                }}>
+                  <Link href="/references#cases" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#d1d5db', textDecoration: 'none' }}>
                     → Cases
                   </Link>
-                  <Link href="/references#publications" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#666', textDecoration: 'none' }}>
+                  <Link href="/references#publications" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', fontSize: '18px', color: '#d1d5db', textDecoration: 'none' }}>
                     → Publications
                   </Link>
                 </div>
@@ -448,10 +515,10 @@ export default function Navbar() {
                     display: 'block',
                     fontSize: '22px',
                     fontWeight: 'bold',
-                    color: '#0f2d52',
+                    color: 'var(--gold)',
                     textDecoration: 'none',
                     padding: '15px 0',
-                    borderBottom: '2px solid #e5e7eb'
+                    borderBottom: '2px solid rgba(212, 175, 55, 0.3)'
                   }}
                 >
                   Contact

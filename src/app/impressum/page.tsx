@@ -66,7 +66,7 @@ export default function ImpressumPage() {
                   Angaben gemäß § 5 TMG
                 </h2>
                 <div className="gold-border">
-                  <p className="text-gray-600">Advokatur-KuK</p>
+                  <p className="text-gray-600">Advokatur KuK AG (in Gründung)</p>
                   <p className="text-gray-600">Katalin Nemeth</p>
                   <p className="text-gray-600">Hauptstrasse 77</p>
                   <p className="text-gray-600">6260 Reiden, Switzerland</p>

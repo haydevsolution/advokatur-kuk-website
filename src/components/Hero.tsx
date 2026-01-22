@@ -80,7 +80,7 @@ export default function Hero() {
           ></div>
 
           {/* Begrüßung */}
-          <div className="mb-8" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div className="mb-8" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
             <SplitText
               text="Welcome to"
               tag="h1"
@@ -95,7 +95,7 @@ export default function Hero() {
             />
             <div style={{ color: 'var(--gold)' }}>
               <SplitText
-                text="Advokatur-KuK"
+                text="Advokatur KuK AG (in Gründung)"
                 tag="h1"
                 delay={50}
                 duration={1}
@@ -107,46 +107,6 @@ export default function Hero() {
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg"
               />
             </div>
-          </div>
-
-          {/* Drei Services - untereinander */}
-          <div className="mb-8" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-            <SplitText
-              text="Dispute Resolution"
-              tag="h2"
-              delay={40}
-              duration={0.8}
-              ease="power2.out"
-              splitType="words"
-              from={{ opacity: 0, y: 30 }}
-              to={{ opacity: 1, y: 0 }}
-              textAlign="center"
-              className="text-2xl md:text-3xl font-bold text-white drop-shadow-md"
-            />
-            <SplitText
-              text="Legal Advice"
-              tag="h2"
-              delay={40}
-              duration={0.8}
-              ease="power2.out"
-              splitType="words"
-              from={{ opacity: 0, y: 30 }}
-              to={{ opacity: 1, y: 0 }}
-              textAlign="center"
-              className="text-2xl md:text-3xl font-bold text-white drop-shadow-md"
-            />
-            <SplitText
-              text="Compliance"
-              tag="h2"
-              delay={40}
-              duration={0.8}
-              ease="power2.out"
-              splitType="words"
-              from={{ opacity: 0, y: 30 }}
-              to={{ opacity: 1, y: 0 }}
-              textAlign="center"
-              className="text-2xl md:text-3xl font-bold text-white drop-shadow-md"
-            />
           </div>
 
           <div style={{ marginTop: '2rem', marginBottom: '3rem' }}>

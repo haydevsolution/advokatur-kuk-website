@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
             <div class="container">
               <div class="header">
                 <h1 style="margin: 0;">New Contact Form Submission</h1>
-                <p style="margin: 10px 0 0 0; opacity: 0.9;">From Advokatur-KuK Website</p>
+                <p style="margin: 10px 0 0 0; opacity: 0.9;">From Advokatur KuK AG (in Gründung) Website</p>
               </div>
               <div class="content">
                 <div class="field">

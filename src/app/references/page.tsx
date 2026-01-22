@@ -64,12 +64,12 @@ export default function ReferencesPage() {
         </div>
       </section>
 
-      {/* In-house Experience */}
-      <section id="in-house-experience" className="section bg-white">
+      {/* In-house */}
+      <section id="in-house" className="section bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: 'var(--primary)' }}>
-              In-house Experience
+              In-house
             </h2>
             <div style={{ height: '4px', width: '80px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
             
@@ -98,56 +98,6 @@ export default function ReferencesPage() {
                   <p className="text-base leading-relaxed" style={{ color: '#4b5563' }}>{item}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ADR Experience */}
-      <section id="adr-experience" className="section" style={{ backgroundColor: '#f8f9fa' }}>
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: 'var(--primary)' }}>
-              ADR Experience
-            </h2>
-            <div style={{ height: '4px', width: '80px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
-            
-            <div className="space-y-6">
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Managed complex, international business disputes in civil and common law arbitration, Swiss civil state court and mediation proceedings on behalf of clients from Europe, Middle East, Asia, North and South America. Drafted submissions and settlement agreements, analyzed evidence and legal questions, performed complex damage calculations, prepared witness examinations, and conducted arbitral hearings as counsel.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Negotiated and enforced R&D agreements, advised the set-up of investment vehicles on behalf of life science companies; drafted, analyzed and enforced legal documents related to marketing and distribution of biotechnological products; analyzed risks of potential disputes and estimate damages; collaborated with IP lawyers to manage disputes worldwide; represented life science companies in disputes.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Advised in-house counsel in pre-litigation phase to minimize risks, manage contract documentation and draft new solid supply and collaboration agreements.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Acquired experience in the fields of <strong>aviation</strong> (post mergers & acquisitions disputes, sale and lease back agreements), <strong>trade of commodities</strong> (supply agreements), <strong>constructions</strong> (contract law, licensing).
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Advised foreign and national clients on Swiss civil contract law, agency, IP rights, licensing, liability/torts, enforcement law and compliance matters.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Analyzed and enforced entertainment related broadcasting agreements.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Analyzed aviation related legal documents related to compensation schemes and collective labor matters.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Advised various clients in data protection, anti-bribery and corruption matters.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Represented athletes in proceedings at the <strong>Court of Arbitration for Sport, Lausanne</strong> as pro bono counsel.
-              </p>
             </div>
           </div>
         </div>

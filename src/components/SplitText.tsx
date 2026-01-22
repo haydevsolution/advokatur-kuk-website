@@ -121,9 +121,13 @@ const SplitText = ({
       );
 
       return () => {
-        ScrollTrigger.getAll().forEach(st => {
-          if (st.trigger === el) st.kill();
-        });
+        // Cleanup only the ScrollTriggers associated with this element
+        const triggers = ScrollTrigger.getAll();
+        for (let i = triggers.length - 1; i >= 0; i--) {
+          if (triggers[i].trigger === el) {
+            triggers[i].kill();
+          }
+        }
       };
     },
     {

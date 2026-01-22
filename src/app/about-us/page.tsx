@@ -84,17 +84,9 @@ export default function AboutUsPage() {
                 She previously worked at different commercial Swiss law firms in Switzerland, and an American arbitration/mediation service provider in California.
               </p>
               
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563', lineHeight: '1.9' }}>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
                 Katalin has over <strong>15 years experience</strong> in giving legal advice to private and institutional clients. She has been advising her clients on how to avoid disputes, how to prepare for litigation, and represented her clients in civil and criminal litigations including arbitrations.
               </p>
-            </div>
-
-            {/* Career Highlights */}
-            <div className="mb-16" style={{ marginTop: '5rem' }}>
-              <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
-                CAREER HIGHLIGHTS
-              </h3>
-              <div style={{ height: '3px', width: '60px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
               
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
                 She acted as <strong>Pro Bono Counsel</strong> to athletes at the <strong>Court of Arbitration for Sport (Lausanne)</strong>.
