@@ -103,7 +103,7 @@ export default function Navbar() {
             {/* Desktop: Logo */}
             <Link href="/" className="hidden md:flex items-center group transition-transform duration-300 hover:scale-105 w-[240px]" style={{ backgroundColor: 'transparent', marginLeft: '38px' }}>
               <Image
-                src="/images/LOGO.jpeg"
+                src="/images/LOGO-Photoroom(1).png"
                 alt="Advokatur KuK Logo"
                 width={180}
                 height={60}
@@ -170,7 +170,7 @@ export default function Navbar() {
               }}
             >
               <Image
-                src="/images/LOGO.jpeg"
+                src="/images/LOGO-Photoroom(1).png"
                 alt="Advokatur KuK Logo"
                 width={140}
                 height={48}
@@ -354,7 +354,7 @@ export default function Navbar() {
             {/* Logo */}
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
               <Image
-                src="/images/LOGO.jpeg"
+                src="/images/LOGO-Photoroom(1).png"
                 alt="Advokatur KuK Logo"
                 width={160}
                 height={55}
