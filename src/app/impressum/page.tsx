@@ -60,10 +60,10 @@ export default function ImpressumPage() {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
-              {/* Angaben gemäß § 5 TMG */}
+              {/* Company Information */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Angaben gemäß § 5 TMG
+                  Company Information
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600">Advokatur KuK AG (in Gründung)</p>
@@ -73,42 +73,42 @@ export default function ImpressumPage() {
                 </div>
               </div>
 
-              {/* Kontakt */}
+              {/* Contact */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Kontakt
+                  Contact
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600">Please use our <Link href="/kontakt" className="font-semibold hover:underline" style={{ color: 'var(--gold)' }}>contact form</Link> to get in touch with us.</p>
                 </div>
               </div>
 
-              {/* Berufsbezeichnung und berufsrechtliche Regelungen */}
+              {/* Professional Title and Regulations */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Berufsbezeichnung und berufsrechtliche Regelungen
+                  Professional Title and Regulatory Framework
                 </h2>
                 <div className="gold-border space-y-4">
                   <div>
-                    <p className="font-semibold text-gray-700">Berufsbezeichnung:</p>
-                    <p className="text-gray-600">Rechtsanwältin (verliehen in der Bundesrepublik Deutschland)</p>
+                    <p className="font-semibold text-gray-700">Professional Title:</p>
+                    <p className="text-gray-600">Attorney-at-Law (admitted in the Federal Republic of Germany)</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-700">Zuständige Kammer:</p>
-                    <p className="text-gray-600">[Platzhalter: Rechtsanwaltskammer]</p>
-                    <p className="text-gray-600">[Platzhalter: Adresse der Kammer]</p>
+                    <p className="font-semibold text-gray-700">Competent Bar Association:</p>
+                    <p className="text-gray-600">[Placeholder: Bar Association]</p>
+                    <p className="text-gray-600">[Placeholder: Address of Bar Association]</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-700">Es gelten folgende berufsrechtliche Regelungen:</p>
+                    <p className="font-semibold text-gray-700">The following professional regulations apply:</p>
                     <ul className="text-gray-600 list-disc list-inside mt-2">
-                      <li>Bundesrechtsanwaltsordnung (BRAO)</li>
-                      <li>Berufsordnung für Rechtsanwälte (BORA)</li>
-                      <li>Fachanwaltsordnung (FAO)</li>
-                      <li>Rechtsanwaltsvergütungsgesetz (RVG)</li>
-                      <li>Berufsregeln der Rechtsanwälte der Europäischen Union (CCBE)</li>
+                      <li>Federal Lawyers&apos; Act (BRAO)</li>
+                      <li>Professional Code of Conduct for Lawyers (BORA)</li>
+                      <li>Specialist Lawyers&apos; Regulations (FAO)</li>
+                      <li>Lawyers&apos; Remuneration Act (RVG)</li>
+                      <li>Code of Conduct for European Lawyers (CCBE)</li>
                     </ul>
                     <p className="text-gray-600 mt-2">
-                      Die Regelungen können eingesehen werden unter:{' '}
+                      These regulations can be accessed at:{' '}
                       <a
                         href="https://www.brak.de/fuer-anwaelte/berufsrecht/"
                         target="_blank"
@@ -123,41 +123,41 @@ export default function ImpressumPage() {
                 </div>
               </div>
 
-              {/* Umsatzsteuer-ID */}
+              {/* VAT ID */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Umsatzsteuer-ID
+                  VAT Identification Number
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600">
-                    Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
+                    VAT identification number pursuant to § 27a of the German VAT Act:
                   </p>
-                  <p className="text-gray-600">[Platzhalter: DE XXX XXX XXX]</p>
+                  <p className="text-gray-600">[Placeholder: DE XXX XXX XXX]</p>
                 </div>
               </div>
 
-              {/* Berufshaftpflichtversicherung */}
+              {/* Professional Liability Insurance */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Berufshaftpflichtversicherung
+                  Professional Liability Insurance
                 </h2>
                 <div className="gold-border">
-                  <p className="text-gray-600">[Platzhalter: Name der Versicherung]</p>
-                  <p className="text-gray-600">[Platzhalter: Adresse der Versicherung]</p>
+                  <p className="text-gray-600">[Placeholder: Name of insurance provider]</p>
+                  <p className="text-gray-600">[Placeholder: Address of insurance provider]</p>
                   <p className="text-gray-600 mt-2">
-                    Räumlicher Geltungsbereich: [Platzhalter: z.B. Deutschland / EU / weltweit]
+                    Geographical scope: [Placeholder: e.g. Germany / EU / worldwide]
                   </p>
                 </div>
               </div>
 
-              {/* Streitschlichtung */}
+              {/* Dispute Resolution */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Streitschlichtung
+                  Dispute Resolution
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600 mb-4">
-                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
+                    The European Commission provides an online dispute resolution (ODR) platform:{' '}
                     <a
                       href="https://ec.europa.eu/consumers/odr/"
                       target="_blank"
@@ -169,78 +169,74 @@ export default function ImpressumPage() {
                     </a>
                   </p>
                   <p className="text-gray-600 mb-4">
-                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                    Our contact details can be found above in this imprint.
                   </p>
                   <p className="text-gray-600">
-                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
-                    vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                    We are neither willing nor obliged to participate in dispute resolution
+                    proceedings before a consumer arbitration board.
                   </p>
                 </div>
               </div>
 
-              {/* Haftungshinweis */}
+              {/* Liability for Content */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Haftung für Inhalte
+                  Liability for Content
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600 mb-4">
-                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte
-                    auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
-                    §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
-                    übermittelte oder gespeicherte fremde Informationen zu überwachen oder
-                    nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                    As a service provider, we are responsible for our own content on these
+                    pages in accordance with general legislation. However, we are not obliged
+                    to monitor transmitted or stored third-party information or to investigate
+                    circumstances that indicate illegal activity.
                   </p>
                   <p className="text-gray-600">
-                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
-                    nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche
-                    Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
-                    Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
-                    Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-                  </p>
-                </div>
-              </div>
-
-              {/* Haftung für Links */}
-              <div>
-                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Haftung für Links
-                </h2>
-                <div className="gold-border">
-                  <p className="text-gray-600">
-                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren
-                    Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
-                    Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
-                    Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
-                    verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung
-                    auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum
-                    Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche
-                    Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte
-                    einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von
-                    Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                    Obligations to remove or block the use of information under general law
+                    remain unaffected. However, liability in this regard is only possible from
+                    the point in time at which a concrete infringement of the law becomes known.
+                    If we become aware of any such infringements, we will remove the relevant
+                    content immediately.
                   </p>
                 </div>
               </div>
 
-              {/* Urheberrecht */}
+              {/* Liability for Links */}
               <div>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Urheberrecht
+                  Liability for Links
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600">
-                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
-                    Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
-                    Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-                    Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
-                    jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite
-                    sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-                    Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden,
-                    werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
-                    Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
-                    Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
-                    entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
-                    werden wir derartige Inhalte umgehend entfernen.
+                    Our website contains links to external third-party websites over whose
+                    content we have no control. Therefore, we cannot accept any liability for
+                    this third-party content. The respective provider or operator of the linked
+                    pages is always responsible for the content of those pages. The linked pages
+                    were checked for possible legal violations at the time of linking. No illegal
+                    content was discernible at the time of linking. However, permanent monitoring
+                    of the content of linked pages is not reasonable without concrete evidence of
+                    a legal violation. If we become aware of any legal infringements, we will
+                    remove such links immediately.
+                  </p>
+                </div>
+              </div>
+
+              {/* Copyright */}
+              <div>
+                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
+                  Copyright
+                </h2>
+                <div className="gold-border">
+                  <p className="text-gray-600">
+                    The content and works created by the site operators on these pages are
+                    subject to copyright law. Reproduction, editing, distribution, and any
+                    form of use beyond the limits of copyright law require the written consent
+                    of the respective author or creator. Downloads and copies of this site are
+                    only permitted for private, non-commercial use. Where content on this site
+                    was not created by the operator, the copyrights of third parties are
+                    respected. In particular, third-party content is identified as such. Should
+                    you nevertheless become aware of a copyright infringement, please notify us
+                    accordingly. If we become aware of any infringements, we will remove such
+                    content immediately.
                   </p>
                 </div>
               </div>

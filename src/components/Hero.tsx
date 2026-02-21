@@ -8,24 +8,20 @@ import SplitText from './SplitText';
 // Professionelle Anwaltsbilder für die Diashow
 const heroImages = [
   {
-    url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80',
-    alt: 'Anwalt bei der Arbeit',
+    url: '/images/Hero1.png',
+    alt: 'Advokatur KuK',
   },
   {
-    url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80',
-    alt: 'Rechtsberatung im Büro',
+    url: '/images/Hero2.png',
+    alt: 'Rechtsberatung',
   },
   {
-    url: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80',
+    url: '/images/Hero3.png',
     alt: 'Professionelle Beratung',
   },
   {
-    url: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80',
-    alt: 'Vertragsunterzeichnung',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1920&q=80',
-    alt: 'Rechtliche Dokumente',
+    url: '/images/Hero4.png',
+    alt: 'Kanzlei',
   },
 ];
 
@@ -95,7 +91,7 @@ export default function Hero() {
             />
             <div style={{ color: 'var(--gold)' }}>
               <SplitText
-                text="Advokatur KuK AG (in Gründung)"
+                text="Advokatur KuK"
                 tag="h1"
                 delay={50}
                 duration={1}

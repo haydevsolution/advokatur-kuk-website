@@ -85,8 +85,8 @@ export default function Home() {
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80"
-                alt="Law Firm"
+                src="/images/Waage.png"
+                alt="Waage der Gerechtigkeit"
                 fill
                 className="object-cover"
               />
