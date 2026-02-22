@@ -8,8 +8,8 @@ import BlurText from "@/components/BlurText";
 export default function Home() {
   return (
     <>
-      {/* Hero Section - ohne pt-20 da es die erste Section ist */}
-      <div className="-mt-20" style={{ position: 'relative' }}>
+      {/* Blue background behind fixed navbar */}
+      <div style={{ marginTop: 'calc(-5rem - 2px)', paddingTop: 'calc(5rem + 2px)', backgroundColor: 'var(--primary)', position: 'relative' }}>
         <Hero />
         {/* Smooth Gradient Transition */}
         <div style={{

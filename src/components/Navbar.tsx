@@ -180,7 +180,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop: Navigation Links */}
-            <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="hidden md:flex items-center justify-center" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
               <div className="flex items-center gap-1">
                 {navItems.map((item) => {
                   const isActive = pathname === item.href || (item.dropdown && item.dropdown.some(sub => pathname === sub.href));
