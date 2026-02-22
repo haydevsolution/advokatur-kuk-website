@@ -98,7 +98,7 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 lg:px-12">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16">
 
             {/* Desktop: Logo */}
             <Link href="/" className="hidden md:flex items-center group transition-transform duration-300 hover:scale-105 w-[240px]" style={{ backgroundColor: 'transparent', marginLeft: '38px' }}>

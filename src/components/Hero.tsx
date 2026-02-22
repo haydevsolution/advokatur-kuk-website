@@ -39,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="flex items-center justify-center relative overflow-hidden" style={{ minHeight: 'calc(100vh - 5rem)' }}>
+    <section className="flex items-center justify-center relative overflow-hidden" style={{ minHeight: 'calc(100vh - 4rem)' }}>
       {/* Diashow Hintergrund */}
       {heroImages.map((image, index) => (
         <div

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Blue background behind fixed navbar */}
-      <div style={{ marginTop: 'calc(-5rem - 2px)', paddingTop: 'calc(5rem + 2px)', backgroundColor: 'var(--primary)', position: 'relative' }}>
+      <div style={{ marginTop: 'calc(-4rem - 2px)', paddingTop: 'calc(4rem + 2px)', backgroundColor: 'var(--primary)', position: 'relative' }}>
         <Hero />
         {/* Smooth Gradient Transition */}
         <div style={{
