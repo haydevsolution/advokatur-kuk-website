@@ -192,24 +192,34 @@ export default function ReferencesPage() {
             
             <div className="space-y-8">
               {[
-                { authors: 'Meier, K.', title: 'On adjudication boards in construction matters, with specific focus on the new FIDIC dispute adjudication/avoidance board ("DAAB")', publication: 'IBA Real Estate Committee E-Bulletin', date: 'Spring 2020–work in progress', type: 'Publication' },
-                { authors: 'Fehr-Bosshard, D. / Gassmann, J. D. / Meier, K. / Prinz, M. Ph. / Jäggy, M. / Tarolli Schmidt, N.', title: 'Lexology Getting the Deal Through - Sports Law 2020: Chapter on Switzerland', publication: 'Lexology.com', date: 'January, 2020', type: 'Publication' },
-                { authors: 'Meier, K.', title: 'How to Effectively Advocate in International Arbitrations seated in Europe', publication: 'California Lawyer\'s Association, Litigation Section', date: 'November, 2019', type: 'Webinar' },
-                { authors: 'Chernick, R. / Chedid, M. / Miller, H. B. / O\'Malley, N. / Meier, K. (Program Lead Research Attorney)', title: 'International Arbitration 2019: A New Era for California, Your Clients and You', publication: 'Thomson Reuters / The Rutter Group, San Francisco and Los Angeles', date: 'June, 2019', type: 'Conference' },
-                { authors: 'Benton, G. / Meier, K.', title: 'California – A Rising Star Among International Arbitration Seats', publication: 'New York Dispute Resolution Law Journal Vol. 12 No. 1, 23-26', date: 'March, 2019', type: 'Journal Article' },
-                { authors: 'Meier, K.', title: 'Rules of Evidence in International Arbitration, the current state of matters and do we need alternative approaches?', publication: 'Musick Peeler / USC Gould / CIAC, Los Angeles', date: 'March, 2019', type: 'Speaking Engagement' },
-                { authors: 'Meier, K.', title: 'Motion Picture Arbitration: New Developments in Arbitration', publication: 'Independent Film and Television Alliance, Annual Arbitrator Meeting, Los Angeles', date: 'October, 2018', type: 'Speaking Engagement' },
-                { authors: 'Meier, K.', title: 'A Beginner\'s Guide to Mediation', publication: 'ICC Young Arbitrators Forum, San Francisco', date: 'May, 2018', type: 'Speaking Engagement' },
-                { authors: 'Gabriel, S. / Buhr, A. / Meier, K.', title: 'Switzerland, Law and Practice', publication: 'Chambers & Partners International Arbitration Guide', date: 'June, 2017', type: 'Publication' }
+                { authors: 'Meier, K.', title: 'On adjudication boards in construction matters, with specific focus on the new FIDIC dispute adjudication/avoidance board ("DAAB")', publication: 'IBA Real Estate Committee E-Bulletin', date: 'Spring 2020–work in progress', type: 'Publication', pdf: '/publications/KMEI_IBA_DAAB_2019.pdf' },
+                { authors: 'Fehr-Bosshard, D. / Gassmann, J. D. / Meier, K. / Prinz, M. Ph. / Jäggy, M. / Tarolli Schmidt, N.', title: 'Lexology Getting the Deal Through - Sports Law 2020: Chapter on Switzerland', publication: 'Lexology.com', date: 'January, 2020', type: 'Publication', pdf: '/publications/Lexology Switzerland 2020 Sports.PDF' },
+                { authors: 'Chernick, R. / Chedid, M. / Miller, H. B. / O\'Malley, N. / Meier, K. (Program Lead Research Attorney)', title: 'International Arbitration 2019: A New Era for California, Your Clients and You', publication: 'Thomson Reuters / The Rutter Group, San Francisco and Los Angeles', date: 'June, 2019', type: 'Conference', pdf: '/publications/KMEI_A_New_Era_for_California_13_06_2019.pdf' },
+                { authors: 'Benton, G. / Meier, K.', title: 'California – A Rising Star Among International Arbitration Seats', publication: 'New York Dispute Resolution Law Journal Vol. 12 No. 1, 23-26', date: 'March, 2019', type: 'Journal Article', pdf: '/publications/California-A Rising Star Among International Arbitration Seats-DRL Spring2019.pdf' },
+                { authors: 'Meier, K.', title: 'Rules of Evidence in International Arbitration, the current state of matters and do we need alternative approaches?', publication: 'Musick Peeler / USC Gould / CIAC, Los Angeles', date: 'March, 2019', type: 'Speaking Engagement', pdf: '/publications/KMEI_Rules_of_Evidence_in_International_Arbitration_12.03.2019.pdf' },
+                { authors: 'Meier, K.', title: 'Motion Picture Arbitration: New Developments in Arbitration', publication: 'Independent Film and Television Alliance, Annual Arbitrator Meeting, Los Angeles', date: 'October, 2018', type: 'Speaking Engagement', pdf: '/publications/KMEI_New_Developments_in_Arbitration_29.10.2018.pdf' },
+                { authors: 'Meier, K.', title: 'A Beginner\'s Guide to Mediation', publication: 'ICC Young Arbitrators Forum, San Francisco', date: 'May, 2018', type: 'Speaking Engagement', pdf: '/publications/KMEI_A_Beginner_s_Guide_to_Mediation_02.05.pdf' },
+                { authors: 'Gabriel, S. / Buhr, A. / Meier, K.', title: 'Switzerland, Law and Practice', publication: 'Chambers & Partners International Arbitration Guide', date: 'June, 2017', type: 'Publication', pdf: '/publications/KMEI_Switzerland-Law_and_Practice_2017.pdf' },
+                { authors: 'Gabriel, S. / Buhr, A. / Meier, K.', title: 'International Arbitration: Law and Practice', publication: 'Chambers Global Practice Guides', date: '2017', type: 'Publication', pdf: '/publications/12 Article Chambers.pdf' },
+                { authors: 'Meier, K.', title: 'Security for Costs', publication: 'ICC YAF, Budapest', date: 'May, 2017', type: 'Publication', pdf: '/publications/KMEI_Security_for_Costs_19.05.2017.pdf' },
+                { authors: 'Gabriel, S. / Meier, K.', title: 'Set-Off Defenses in Arbitration – Conclusions from a Swiss Civil Law Perspective', publication: 'Indian Journal of Arbitration Law', date: '2017', type: 'Publication', pdf: '/publications/KMEI_Set-Off_Defenses_in_Arbitration_-_Conclusions_from_a_Swiss_Civil_Law_Perspective_2017.pdf' },
+                { authors: 'Meier, K.', title: 'A perfinanszírozás kérdése svájci szemszögből (Third Party Funding from a Swiss Perspective)', publication: 'Európai Jogi Fórum', date: '2017', type: 'Publication', pdf: '/publications/KMEI_Third_Party_Funding__in_Hungarian__2017.pdf' },
+                { authors: 'Meier, K.', title: 'Tribunal-Assisted Settlements in International Arbitration – Legal Introduction', publication: 'ICC YAF, Zurich', date: 'September, 2016', type: 'Publication', pdf: '/publications/KMEI_Tribunal_Assisted_Settlements_in_International_Arbitration_-_Legal_Introduction_08.09.2016.pdf' },
+                { authors: 'Meier, K.', title: 'A perfinanszírozás kérdése a nemzetközi választottbírósági eljárásokban svájci szemszögből', publication: 'Külgazdaság, LXI. évfolyam, 2017/7–8', date: '2017', type: 'Publication', pdf: '/publications/kulgazdasag_2017_7-8.pdf' }
               ].map((pub, index) => (
-                <div 
-                  key={index} 
-                  className="rounded-xl bg-white transition-all duration-300 hover:scale-[1.02]" 
-                  style={{ 
+                <a
+                  href={pub.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={index}
+                  className="rounded-xl bg-white transition-all duration-300 hover:scale-[1.02] block"
+                  style={{
                     padding: '2rem',
                     border: '1px solid #e5e7eb',
                     borderLeft: '5px solid var(--gold)',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                    textDecoration: 'none',
+                    cursor: 'pointer'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.boxShadow = '0 8px 24px rgba(212, 175, 55, 0.12)';
@@ -219,9 +229,9 @@ export default function ReferencesPage() {
                   }}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span 
-                      className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase" 
-                      style={{ 
+                    <span
+                      className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase"
+                      style={{
                         backgroundColor: '#f0f2f5',
                         color: 'var(--primary)'
                       }}
@@ -231,21 +241,24 @@ export default function ReferencesPage() {
                     <span className="text-sm font-semibold" style={{ color: '#9ca3af' }}>
                       {pub.date}
                     </span>
+                    <svg className="w-4 h-4 ml-auto flex-shrink-0" fill="none" stroke="var(--gold)" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                   </div>
-                  
+
                   <p className="text-sm font-semibold mb-3" style={{ color: 'var(--gold)', letterSpacing: '0.3px' }}>
                     {pub.authors}
                   </p>
-                  
+
                   <h3 className="text-lg font-bold mb-3 leading-relaxed" style={{ color: 'var(--primary)' }}>
                     {pub.title}
                   </h3>
-                  
+
                   <div className="flex items-start gap-2 pt-3" style={{ borderTop: '1px solid #f0f2f5' }}>
-                    <svg 
-                      className="w-5 h-5 flex-shrink-0 mt-0.5" 
-                      fill="none" 
-                      stroke="var(--gold)" 
+                    <svg
+                      className="w-5 h-5 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="var(--gold)"
                       viewBox="0 0 24 24"
                       style={{ minWidth: '20px' }}
                     >
@@ -255,7 +268,7 @@ export default function ReferencesPage() {
                       {pub.publication}
                     </p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
