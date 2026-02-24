@@ -40,6 +40,12 @@ export default function Hero() {
 
   return (
     <section className="flex items-center justify-center relative overflow-hidden" style={{ minHeight: 'calc(100vh - 4rem)' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-img-0 { object-position: 70% top !important; }
+          .hero-img-2 { object-position: 60% top !important; }
+        }
+      `}</style>
       {/* Diashow Hintergrund */}
       {heroImages.map((image, index) => (
         <div
@@ -52,7 +58,7 @@ export default function Hero() {
             src={image.url}
             alt={image.alt}
             fill
-            className="object-cover object-top"
+            className={`object-cover object-top hero-img-${index}`}
             priority={index === 0}
           />
         </div>
