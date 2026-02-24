@@ -42,8 +42,8 @@ export default function Hero() {
     <section className="flex items-center justify-center relative overflow-hidden" style={{ minHeight: 'calc(100vh - 4rem)' }}>
       <style>{`
         @media (max-width: 768px) {
-          .hero-img-0 { object-position: 70% top !important; }
-          .hero-img-2 { object-position: 60% top !important; }
+          .hero-img-0 { object-position: 30% top !important; }
+          .hero-img-2 { object-position: 40% top !important; }
         }
       `}</style>
       {/* Diashow Hintergrund */}
