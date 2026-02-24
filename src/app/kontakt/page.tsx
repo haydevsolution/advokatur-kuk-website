@@ -135,6 +135,14 @@ export default function KontaktPage() {
 
       {/* Kontaktformular */}
       <section className="section" style={{ background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)' }}>
+        <style>{`
+          @media (max-width: 768px) {
+            .contact-form-card { padding: 1.5rem 1.25rem !important; }
+            .contact-image-wrapper { min-height: 200px !important; }
+            .contact-details-card { padding: 1.5rem !important; }
+            .contact-submit-btn { padding: 1rem 2rem !important; font-size: 1rem !important; }
+          }
+        `}</style>
         <div className="container mx-auto px-6">
           <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
             {/* Form Header */}
@@ -153,7 +161,7 @@ export default function KontaktPage() {
 
             {/* Left: Form Container */}
             <div
-              className="lg:col-span-3"
+              className="lg:col-span-3 contact-form-card"
               style={{
                 background: 'white',
                 borderRadius: '16px',
@@ -430,7 +438,7 @@ export default function KontaktPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group"
+                  className="group contact-submit-btn"
                   style={{
                     width: '100%',
                     display: 'flex',
@@ -492,7 +500,7 @@ export default function KontaktPage() {
             {/* Right: Image + Contact Info */}
             <div className="lg:col-span-2" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {/* Contact Image */}
-              <div style={{ borderRadius: '16px', overflow: 'hidden', position: 'relative', flex: '1 1 0' , minHeight: '300px' }}>
+              <div className="contact-image-wrapper" style={{ borderRadius: '16px', overflow: 'hidden', position: 'relative', flex: '1 1 0' , minHeight: '300px' }}>
                 <Image
                   src="/images/Kontakt.png"
                   alt="Advokatur KuK Kontakt"
@@ -504,6 +512,7 @@ export default function KontaktPage() {
 
               {/* Contact Details */}
               <div
+                className="contact-details-card"
                 style={{
                   background: 'white',
                   borderRadius: '16px',
