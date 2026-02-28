@@ -17,7 +17,7 @@ const heroImages = [
     url: '/images/Hero1.png',
     alt: 'Advokatur KuK',
     desktopPosition: 'center top',
-    mobilePosition: '40% top',
+    mobilePosition: '25% top',
   },
   {
     url: '/images/Hero4.png',
