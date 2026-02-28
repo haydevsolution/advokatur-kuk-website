@@ -1,14 +1,15 @@
 'use client';
 
 import SplitText from "@/components/SplitText";
+import Image from "next/image";
 
 export default function AboutUsPage() {
   return (
     <>
       {/* Page Header */}
       <section style={{ 
-        paddingTop: '10rem', 
-        paddingBottom: '2rem', 
+        paddingTop: '3.5rem', 
+        paddingBottom: '3.5rem', 
         textAlign: 'center', 
         color: 'white',
         position: 'relative' as const,
@@ -67,34 +68,51 @@ export default function AboutUsPage() {
       {/* Main Content */}
       <section className="section bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            
-            {/* Expertise Section */}
+          <div className="max-w-6xl mx-auto">
+
+            {/* Expertise Section with Image */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-4 mt-0" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
-                EXPERTISE & BACKGROUND
-              </h3>
-              <div style={{ height: '3px', width: '60px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
-              
-              <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
-                Katalin is a <strong>dispute resolution expert</strong> qualified in <strong>Switzerland</strong> and <strong>California</strong> as Attorney-at-Law.
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
-                She previously worked at different commercial Swiss law firms in Switzerland, and an American arbitration/mediation service provider in California.
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
-                Katalin has over <strong>15 years experience</strong> in giving legal advice to private and institutional clients. She has been advising her clients on how to avoid disputes, how to prepare for litigation, and represented her clients in civil and criminal litigations including arbitrations.
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
-                She acted as <strong>Pro Bono Counsel</strong> to athletes at the <strong>Court of Arbitration for Sport (Lausanne)</strong>.
-              </p>
-              
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563', lineHeight: '1.9' }}>
-                In addition, Katalin has been working in-house focusing on international IP and IT matters, and advising companies on data protection and compliancy regulations for several years.
-              </p>
+              <div className="grid md:grid-cols-7 gap-12 items-start">
+                <div className="md:col-span-5">
+                  <h3 className="text-2xl font-bold mb-4 mt-0" style={{ color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                    EXPERTISE & BACKGROUND
+                  </h3>
+                  <div style={{ height: '3px', width: '60px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
+
+                  <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
+                    Katalin is a <strong>dispute resolution expert</strong> qualified in <strong>Switzerland</strong> and <strong>California</strong> as Attorney-at-Law.
+                  </p>
+
+                  <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
+                    She previously worked at different commercial Swiss law firms in Switzerland, and an American arbitration/mediation service provider in California.
+                  </p>
+
+                  <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
+                    Katalin has over <strong>15 years experience</strong> in giving legal advice to private and institutional clients. She has been advising her clients on how to avoid disputes, how to prepare for litigation, and represented her clients in civil and criminal litigations including arbitrations.
+                  </p>
+
+                  <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563', lineHeight: '1.9' }}>
+                    She acted as <strong>Pro Bono Counsel</strong> to athletes at the <strong>Court of Arbitration for Sport (Lausanne)</strong>.
+                  </p>
+
+                  <p className="text-lg leading-relaxed" style={{ color: '#4b5563', lineHeight: '1.9' }}>
+                    In addition, Katalin has been working in-house focusing on international IP and IT matters, and advising companies on data protection and compliancy regulations for several years.
+                  </p>
+                </div>
+
+                <div className="md:col-span-2 relative" style={{ minHeight: '400px' }}>
+                  <div style={{ position: 'sticky', top: '6rem', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.12)' }}>
+                    <Image
+                      src="/images/chair.jpg"
+                      alt="Advokatur KuK Office"
+                      width={500}
+                      height={650}
+                      className="object-cover"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* USP Section */}

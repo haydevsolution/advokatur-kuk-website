@@ -8,20 +8,20 @@ import SplitText from './SplitText';
 // Professionelle Anwaltsbilder für die Diashow
 const heroImages = [
   {
-    url: '/images/Hero1.png',
-    alt: 'Advokatur KuK',
-  },
-  {
-    url: '/images/Hero2.png',
-    alt: 'Rechtsberatung',
-  },
-  {
     url: '/images/Hero3.png',
     alt: 'Professionelle Beratung',
   },
   {
+    url: '/images/Hero1.png',
+    alt: 'Advokatur KuK',
+  },
+  {
     url: '/images/Hero4.png',
     alt: 'Kanzlei',
+  },
+  {
+    url: '/images/Hero2.png',
+    alt: 'Rechtsberatung',
   },
 ];
 
@@ -39,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="flex items-center justify-center relative overflow-hidden" style={{ minHeight: 'calc(100vh - 4rem)' }}>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <style>{`
         @media (max-width: 768px) {
           .hero-img-0 { object-position: 30% top !important; }
@@ -132,7 +132,7 @@ export default function Hero() {
               Get in Touch
             </Link>
             <Link href="/services" className="btn-outline">
-              Our Services
+              Services
             </Link>
           </div>
         </div>

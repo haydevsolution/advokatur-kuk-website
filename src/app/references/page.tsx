@@ -7,8 +7,8 @@ export default function ReferencesPage() {
     <>
       {/* Page Header */}
       <section style={{ 
-        paddingTop: '10rem', 
-        paddingBottom: '2rem', 
+        paddingTop: '3.5rem', 
+        paddingBottom: '3.5rem', 
         textAlign: 'center', 
         color: 'white',
         position: 'relative' as const,
@@ -77,7 +77,7 @@ export default function ReferencesPage() {
               As <strong>head of legal</strong> for almost five years with an internationally renowned publishing house, Katalin accumulated a wealth of experience in an IP driven, high-paced industry:
             </p>
 
-            <div className="grid gap-4">
+            <div className="grid md:grid-cols-2 gap-5">
               {[
                 'Negotiating international licensing agreements for academic institutions and healthcare businesses (including transformative deals, AI and TDM provisions)',
                 'Advising on distribution and agency agreements in publishing worldwide',
@@ -93,8 +93,40 @@ export default function ReferencesPage() {
                 'Handling corporate housekeeping, including insurance policies and whistleblowing strategies',
                 'Leading internal investigations'
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 rounded-lg" style={{ backgroundColor: '#f8f9fa' }}>
-                  <div style={{ minWidth: '6px', height: '6px', backgroundColor: 'var(--gold)', borderRadius: '50%', marginTop: '8px' }}></div>
+                <div
+                  key={index}
+                  className="flex items-start gap-4 rounded-xl transition-all duration-300"
+                  style={{
+                    padding: '1.25rem 1.5rem',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                    border: '1px solid #e5e7eb',
+                    borderLeft: '4px solid var(--gold)',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(212, 175, 55, 0.12)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <div style={{
+                    minWidth: '28px',
+                    height: '28px',
+                    backgroundColor: 'var(--gold)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    marginTop: '2px'
+                  }}>
+                    <svg style={{ width: '14px', height: '14px', color: 'white' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
                   <p className="text-base leading-relaxed" style={{ color: '#4b5563' }}>{item}</p>
                 </div>
               ))}
@@ -199,7 +231,6 @@ export default function ReferencesPage() {
                 { authors: 'Meier, K.', title: 'Rules of Evidence in International Arbitration, the current state of matters and do we need alternative approaches?', publication: 'Musick Peeler / USC Gould / CIAC, Los Angeles', date: 'March, 2019', type: 'Speaking Engagement', pdf: '/publications/KMEI_Rules_of_Evidence_in_International_Arbitration_12.03.2019.pdf' },
                 { authors: 'Meier, K.', title: 'Motion Picture Arbitration: New Developments in Arbitration', publication: 'Independent Film and Television Alliance, Annual Arbitrator Meeting, Los Angeles', date: 'October, 2018', type: 'Speaking Engagement', pdf: '/publications/KMEI_New_Developments_in_Arbitration_29.10.2018.pdf' },
                 { authors: 'Meier, K.', title: 'A Beginner\'s Guide to Mediation', publication: 'ICC Young Arbitrators Forum, San Francisco', date: 'May, 2018', type: 'Speaking Engagement', pdf: '/publications/KMEI_A_Beginner_s_Guide_to_Mediation_02.05.pdf' },
-                { authors: 'Gabriel, S. / Buhr, A. / Meier, K.', title: 'Switzerland, Law and Practice', publication: 'Chambers & Partners International Arbitration Guide', date: 'June, 2017', type: 'Publication', pdf: '/publications/KMEI_Switzerland-Law_and_Practice_2017.pdf' },
                 { authors: 'Gabriel, S. / Buhr, A. / Meier, K.', title: 'International Arbitration: Law and Practice', publication: 'Chambers Global Practice Guides', date: '2017', type: 'Publication', pdf: '/publications/12 Article Chambers.pdf' },
                 { authors: 'Meier, K.', title: 'Security for Costs', publication: 'ICC YAF, Budapest', date: 'May, 2017', type: 'Publication', pdf: '/publications/KMEI_Security_for_Costs_19.05.2017.pdf' },
                 { authors: 'Gabriel, S. / Meier, K.', title: 'Set-Off Defenses in Arbitration – Conclusions from a Swiss Civil Law Perspective', publication: 'Indian Journal of Arbitration Law', date: '2017', type: 'Publication', pdf: '/publications/KMEI_Set-Off_Defenses_in_Arbitration_-_Conclusions_from_a_Swiss_Civil_Law_Perspective_2017.pdf' },

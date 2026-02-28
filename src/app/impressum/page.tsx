@@ -6,10 +6,10 @@ export default function ImpressumPage() {
   return (
     <>
       {/* Page Header */}
-      <section style={{ 
-        paddingTop: '9rem', 
-        paddingBottom: '5rem', 
-        textAlign: 'center', 
+      <section style={{
+        paddingTop: '3.5rem',
+        paddingBottom: '3.5rem',
+        textAlign: 'center',
         color: 'white',
         position: 'relative' as const,
         overflow: 'hidden',
@@ -36,11 +36,11 @@ export default function ImpressumPage() {
           borderRadius: '50%',
           pointerEvents: 'none',
         }} />
-        
+
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 1 }}>
-          <h1 style={{ 
+          <h1 style={{
             fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-            fontWeight: 700, 
+            fontWeight: 700,
             letterSpacing: '-0.02em',
             lineHeight: '1.2',
             background: 'linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%)',
@@ -67,7 +67,7 @@ export default function ImpressumPage() {
                 </h2>
                 <div className="gold-border">
                   <p className="text-gray-600">Advokatur KuK AG (in Gründung)</p>
-                  <p className="text-gray-600">Katalin Nemeth</p>
+                  <p className="text-gray-600">Katalin Németh</p>
                   <p className="text-gray-600">Hauptstrasse 77</p>
                   <p className="text-gray-600">6260 Reiden, Switzerland</p>
                 </div>
@@ -91,90 +91,14 @@ export default function ImpressumPage() {
                 <div className="gold-border space-y-4">
                   <div>
                     <p className="font-semibold text-gray-700">Professional Title:</p>
-                    <p className="text-gray-600">Attorney-at-Law (admitted in the Federal Republic of Germany)</p>
+                    <p className="text-gray-600">Attorney-at-Law (admitted in Switzerland)</p>
+                    <p className="text-gray-600">Esquire (admitted in California, passive)</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-700">Competent Bar Association:</p>
-                    <p className="text-gray-600">[Placeholder: Bar Association]</p>
-                    <p className="text-gray-600">[Placeholder: Address of Bar Association]</p>
+                    <p className="text-gray-600">Swiss Bar Association</p>
+                    <p className="text-gray-600">California State Bar</p>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-700">The following professional regulations apply:</p>
-                    <ul className="text-gray-600 list-disc list-inside mt-2">
-                      <li>Federal Lawyers&apos; Act (BRAO)</li>
-                      <li>Professional Code of Conduct for Lawyers (BORA)</li>
-                      <li>Specialist Lawyers&apos; Regulations (FAO)</li>
-                      <li>Lawyers&apos; Remuneration Act (RVG)</li>
-                      <li>Code of Conduct for European Lawyers (CCBE)</li>
-                    </ul>
-                    <p className="text-gray-600 mt-2">
-                      These regulations can be accessed at:{' '}
-                      <a
-                        href="https://www.brak.de/fuer-anwaelte/berufsrecht/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline"
-                        style={{ color: 'var(--primary)' }}
-                      >
-                        www.brak.de
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* VAT ID */}
-              <div>
-                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  VAT Identification Number
-                </h2>
-                <div className="gold-border">
-                  <p className="text-gray-600">
-                    VAT identification number pursuant to § 27a of the German VAT Act:
-                  </p>
-                  <p className="text-gray-600">[Placeholder: DE XXX XXX XXX]</p>
-                </div>
-              </div>
-
-              {/* Professional Liability Insurance */}
-              <div>
-                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Professional Liability Insurance
-                </h2>
-                <div className="gold-border">
-                  <p className="text-gray-600">[Placeholder: Name of insurance provider]</p>
-                  <p className="text-gray-600">[Placeholder: Address of insurance provider]</p>
-                  <p className="text-gray-600 mt-2">
-                    Geographical scope: [Placeholder: e.g. Germany / EU / worldwide]
-                  </p>
-                </div>
-              </div>
-
-              {/* Dispute Resolution */}
-              <div>
-                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                  Dispute Resolution
-                </h2>
-                <div className="gold-border">
-                  <p className="text-gray-600 mb-4">
-                    The European Commission provides an online dispute resolution (ODR) platform:{' '}
-                    <a
-                      href="https://ec.europa.eu/consumers/odr/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline"
-                      style={{ color: 'var(--primary)' }}
-                    >
-                      https://ec.europa.eu/consumers/odr/
-                    </a>
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    Our contact details can be found above in this imprint.
-                  </p>
-                  <p className="text-gray-600">
-                    We are neither willing nor obliged to participate in dispute resolution
-                    proceedings before a consumer arbitration board.
-                  </p>
                 </div>
               </div>
 

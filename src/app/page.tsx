@@ -8,8 +8,8 @@ import BlurText from "@/components/BlurText";
 export default function Home() {
   return (
     <>
-      {/* Blue background behind fixed navbar */}
-      <div style={{ marginTop: 'calc(-4rem - 2px)', paddingTop: 'calc(4rem + 2px)', backgroundColor: 'var(--primary)', position: 'relative' }}>
+      {/* Hero Section */}
+      <div style={{ position: 'relative' }}>
         <Hero />
         {/* Smooth Gradient Transition */}
         <div style={{
@@ -75,7 +75,7 @@ export default function Home() {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    Learn more about us
+                    Learn more
                     <svg style={{ width: '18px', height: '18px', transition: 'transform 0.3s ease' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -100,7 +100,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <BlurText
-              text="Our Areas of Practice"
+              text="Areas of Practice"
               delay={150}
               animateBy="words"
               direction="top"

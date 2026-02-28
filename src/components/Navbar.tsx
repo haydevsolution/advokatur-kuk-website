@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const navItems = [
   { 
@@ -32,7 +32,8 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const lastScrollYRef = useRef(0);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function Navbar() {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
-      setMobileDropdown(null); // Reset dropdown when menu closes
+      setMobileDropdown(null);
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -49,21 +50,25 @@ export default function Navbar() {
 
   useEffect(() => {
     let ticking = false;
-    let lastKnownScrollY = lastScrollY;
 
     const handleScroll = () => {
-      lastKnownScrollY = window.scrollY;
-      
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (lastKnownScrollY < 10) {
+          const currentScrollY = window.scrollY;
+          const prevScrollY = lastScrollYRef.current;
+
+          if (currentScrollY <= 80) {
+            setIsScrolled(false);
             setIsVisible(true);
-          } else if (lastKnownScrollY > lastScrollY) {
+          } else if (currentScrollY > prevScrollY) {
+            setIsScrolled(true);
             setIsVisible(false);
           } else {
+            setIsScrolled(true);
             setIsVisible(true);
           }
-          setLastScrollY(lastKnownScrollY);
+
+          lastScrollYRef.current = currentScrollY;
           ticking = false;
         });
         ticking = true;
@@ -72,7 +77,7 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const handleMouseEnter = (itemName: string) => {
     setOpenDropdown(itemName);
@@ -84,16 +89,17 @@ export default function Navbar() {
 
   return (
     <>
-      <nav 
-        className="shadow-sm fixed w-full top-0" 
-        style={{ 
-          backgroundColor: 'rgba(10, 31, 61, 0.75)',
-          backdropFilter: 'blur(10px)',
-          borderBottom: '2px solid rgba(255, 255, 255, 0.5)',
-          borderBottomLeftRadius: '16px',
-          borderBottomRightRadius: '16px',
+      <div style={{ height: '80px' }} />
+      <nav
+        className="shadow-sm w-full fixed top-0"
+        style={{
+          backgroundColor: isScrolled ? 'rgba(10, 31, 61, 0.75)' : 'rgba(10, 31, 61, 0.95)',
+          backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+          borderBottom: isScrolled ? '2px solid rgba(255, 255, 255, 0.5)' : 'none',
+          borderBottomLeftRadius: isScrolled ? '16px' : '0',
+          borderBottomRightRadius: isScrolled ? '16px' : '0',
           transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
-          transition: 'transform 0.3s ease-in-out',
+          transition: 'transform 0.3s ease-in-out, background-color 0.3s ease',
           zIndex: 50
         }}
       >

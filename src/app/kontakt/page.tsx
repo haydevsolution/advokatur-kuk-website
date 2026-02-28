@@ -75,8 +75,8 @@ export default function KontaktPage() {
     <>
       {/* Page Header */}
       <section style={{ 
-        paddingTop: '10rem', 
-        paddingBottom: '2rem', 
+        paddingTop: '3.5rem', 
+        paddingBottom: '3.5rem', 
         textAlign: 'center', 
         color: 'white', 
         position: 'relative' as const, 
@@ -155,6 +155,8 @@ export default function KontaktPage() {
                 Fill out the form below and We will get back to you as soon as possible.
               </p>
             </div>
+
+            <div style={{ marginBottom: '2rem' }}></div>
 
             {/* Two Column Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
@@ -510,49 +512,28 @@ export default function KontaktPage() {
                 />
               </div>
 
-              {/* Contact Details */}
+              {/* Logo */}
               <div
                 className="contact-details-card"
                 style={{
                   background: 'white',
                   borderRadius: '16px',
-                  padding: '2rem 2rem',
+                  padding: '2rem',
                   boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
                   border: '1px solid #e5e7eb',
-                  flexShrink: 0
+                  flexShrink: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
               >
-                <h3 className="text-xl font-bold mb-5" style={{ color: 'var(--primary)' }}>Contact Details</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <svg style={{ width: '22px', height: '22px', color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <div>
-                      <p className="font-semibold text-sm" style={{ color: 'var(--primary)' }}>Address</p>
-                      <p className="text-sm" style={{ color: '#6b7280' }}>Advokatur KuK AG (in Gründung)<br/>Zurich, Switzerland</p>
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <svg style={{ width: '22px', height: '22px', color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <div>
-                      <p className="font-semibold text-sm" style={{ color: 'var(--primary)' }}>Email</p>
-                      <a href="mailto:k.nemeth@advokatur-kuk.com" className="text-sm hover:underline" style={{ color: '#6b7280' }}>k.nemeth@advokatur-kuk.com</a>
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <svg style={{ width: '22px', height: '22px', color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <div>
-                      <p className="font-semibold text-sm" style={{ color: 'var(--primary)' }}>Phone</p>
-                      <a href="tel:+41445551234" className="text-sm hover:underline" style={{ color: '#6b7280' }}>+41 44 555 12 34</a>
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src="/images/LOGO-Photoroom(1).png"
+                  alt="Advokatur KuK Logo"
+                  width={220}
+                  height={80}
+                  style={{ objectFit: 'contain' }}
+                />
               </div>
             </div>
 

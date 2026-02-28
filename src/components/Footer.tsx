@@ -56,7 +56,7 @@ export default function Footer() {
                 lineHeight: '1.75',
                 fontWeight: '400'
               }}>
-                Contact us for a non-binding initial consultation. We are here for you and provide competent advice on all legal matters.
+                Contact KuK for a non-binding initial consultation. Katalin is here for you to provide competent advice on all legal matters.
               </p>
               <Link 
                 href="/kontakt" 

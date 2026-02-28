@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <ScrollToTop />
         <Navbar />
-        <main className="pt-16">
+        <main>
           {children}
         </main>
         <Footer />

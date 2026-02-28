@@ -8,8 +8,8 @@ export default function ServicesPage() {
     <>
       {/* Page Header */}
       <section style={{ 
-        paddingTop: '10rem', 
-        paddingBottom: '2rem', 
+        paddingTop: '3.5rem', 
+        paddingBottom: '3.5rem', 
         textAlign: 'center', 
         color: 'white',
         position: 'relative' as const,
@@ -79,13 +79,39 @@ export default function ServicesPage() {
             </p>
             
             <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563' }}>
-              Katalin's focus is on amicable dispute resolution through mediation and similar techniques. She equally acts as neutral – arbitrator, mediator or expert – in ADR proceedings.
+              Katalin&apos;s focus is on amicable dispute resolution through mediation and similar techniques. She equally acts as neutral – arbitrator, mediator or expert – in ADR proceedings.
             </p>
-            
-            <Link 
-              href="/references#cases" 
+
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
+                Katalin has managed complex, international business disputes in civil and common law arbitration, Swiss civil state court and mediation proceedings on behalf of clients from Europe, Middle East, Asia, North and South America. She drafted submissions and settlement agreements, analyzed evidence and legal questions, performed complex damage calculations, prepared witness examinations, and conducted arbitral hearings as counsel.
+              </p>
+
+              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
+                Katalin has negotiated and enforced R&D agreements, advised the set-up of investment vehicles on behalf of life science companies; drafted, analyzed and enforced legal documents related to marketing and distribution of biotechnological products; analyzed risks of potential disputes and estimate damages; collaborated with IP lawyers to manage disputes worldwide, and represented life science companies in disputes.
+              </p>
+
+              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
+                Katalin advised in-house counsel in pre-litigation phase to minimize risks, manage contract documentation and draft new solid supply and collaboration agreements.
+              </p>
+
+              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
+                Katalin acted as tribunal secretary in several international arbitrations under Swiss or other foreign law, involving amounts of dispute of up to USD 50m.
+              </p>
+
+              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
+                Katalin has specific experience in the fields of <strong>aviation</strong> (post mergers & acquisitions disputes, sale and lease back agreements), <strong>trade of commodities</strong> (supply agreements), <strong>constructions</strong> (contract law, licensing) and <strong>intellectual property</strong> (international publishing).
+              </p>
+
+              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
+                Katalin represented athletes in proceedings at the <strong>Court of Arbitration for Sport, Lausanne</strong> as pro bono counsel.
+              </p>
+            </div>
+
+            <Link
+              href="/references#cases"
               className="learn-more-btn"
-              style={{ 
+              style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
@@ -119,94 +145,6 @@ export default function ServicesPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ADR Experience */}
-      <section id="adr-experience" className="section" style={{ backgroundColor: '#f8f9fa' }}>
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: 'var(--primary)' }}>
-              ADR Experience
-            </h2>
-            <div style={{ height: '4px', width: '80px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
-            
-            <div className="space-y-6">
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Managed complex, international business disputes in civil and common law arbitration, Swiss civil state court and mediation proceedings on behalf of clients from Europe, Middle East, Asia, North and South America. Drafted submissions and settlement agreements, analyzed evidence and legal questions, performed complex damage calculations, prepared witness examinations, and conducted arbitral hearings as counsel.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Negotiated and enforced R&D agreements, advised the set-up of investment vehicles on behalf of life science companies; drafted, analyzed and enforced legal documents related to marketing and distribution of biotechnological products; analyzed risks of potential disputes and estimate damages; collaborated with IP lawyers to manage disputes worldwide; represented life science companies in disputes.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Advised in-house counsel in pre-litigation phase to minimize risks, manage contract documentation and draft new solid supply and collaboration agreements.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Acquired experience in the fields of <strong>aviation</strong> (post mergers & acquisitions disputes, sale and lease back agreements), <strong>trade of commodities</strong> (supply agreements), <strong>constructions</strong> (contract law, licensing).
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Advised foreign and national clients on Swiss civil contract law, agency, IP rights, licensing, liability/torts, enforcement law and compliance matters.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Analyzed and enforced entertainment related broadcasting agreements.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Analyzed aviation related legal documents related to compensation schemes and collective labor matters.
-              </p>
-
-              <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Advised various clients in data protection, anti-bribery and corruption matters.
-              </p>
-
-              <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563' }}>
-                Represented athletes in proceedings at the <strong>Court of Arbitration for Sport, Lausanne</strong> as pro bono counsel.
-              </p>
-              
-              <Link 
-                href="/references#cases" 
-                className="learn-more-btn"
-                style={{ 
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  marginTop: '1.5rem',
-                  padding: '0.875rem 2rem',
-                  backgroundColor: 'transparent',
-                  color: 'var(--gold)',
-                  border: '2px solid var(--gold)',
-                  borderRadius: '50px',
-                  fontWeight: 600,
-                  fontSize: '1rem',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--gold)';
-                  e.currentTarget.style.color = 'white';
-                  e.currentTarget.style.transform = 'translateX(5px)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = 'var(--gold)';
-                  e.currentTarget.style.transform = 'translateX(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                Learn more
-                <svg style={{ width: '18px', height: '18px', transition: 'transform 0.3s ease' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -283,7 +221,7 @@ export default function ServicesPage() {
             <div style={{ height: '4px', width: '80px', backgroundColor: 'var(--gold)', marginBottom: '2rem' }}></div>
             
             <p className="text-lg leading-relaxed mb-6" style={{ color: '#4b5563' }}>
-              The best way to avoid governmental investigations as an in-house counsel is establishing comprehensive compliancy measures. Katalin can advise you in fields such as sanctions, anti-bribery, data protection, product liability or accessibility.
+              The best way to avoid governmental investigations as an in-house counsel is establishing comprehensive compliancy measures. At the same time, measures must be cost effective and tailored to your business budget. Katalin can advise you in fields such as unfair competition, sanctions, anti-bribery, data protection, product liability or accessibility. Katalin further has extensive experience in international restructurings, reorganisations and HR related, sensitive matters. She is empathetic, has excellent communication skills, is result-oriented, and has a deep understanding of actual implementation of strategies and frameworks.
             </p>
             
             <Link 

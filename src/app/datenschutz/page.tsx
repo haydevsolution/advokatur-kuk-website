@@ -7,8 +7,8 @@ export default function DatenschutzPage() {
     <>
       {/* Page Header */}
       <section style={{ 
-        paddingTop: '9rem', 
-        paddingBottom: '5rem', 
+        paddingTop: '3.5rem', 
+        paddingBottom: '3.5rem', 
         textAlign: 'center', 
         color: 'white',
         position: 'relative' as const,
