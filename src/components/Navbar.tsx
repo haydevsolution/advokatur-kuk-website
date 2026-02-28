@@ -57,7 +57,7 @@ export default function Navbar() {
           const currentScrollY = window.scrollY;
           const prevScrollY = lastScrollYRef.current;
 
-          if (currentScrollY <= 80) {
+          if (currentScrollY <= 64) {
             setIsScrolled(false);
             setIsVisible(true);
           } else if (currentScrollY > prevScrollY) {
@@ -89,13 +89,13 @@ export default function Navbar() {
 
   return (
     <>
-      <div style={{ height: '80px' }} />
+      <div style={{ height: '64px', backgroundColor: 'rgb(10, 31, 61)' }} />
       <nav
         className="shadow-sm w-full fixed top-0"
         style={{
           backgroundColor: isScrolled ? 'rgba(10, 31, 61, 0.75)' : 'rgba(10, 31, 61, 0.95)',
           backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-          borderBottom: isScrolled ? '2px solid rgba(255, 255, 255, 0.5)' : 'none',
+          borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.3)',
           borderBottomLeftRadius: isScrolled ? '16px' : '0',
           borderBottomRightRadius: isScrolled ? '16px' : '0',
           transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
