@@ -83,12 +83,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
+            <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
                 src="/images/Waage.png"
                 alt="Waage der Gerechtigkeit"
                 fill
-                className="object-cover"
+                className="object-cover scale-110"
               />
             </div>
           </div>
