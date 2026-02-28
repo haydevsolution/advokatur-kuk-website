@@ -10,18 +10,26 @@ const heroImages = [
   {
     url: '/images/Hero3.png',
     alt: 'Professionelle Beratung',
+    desktopPosition: '70% top',
+    mobilePosition: '30% top',
   },
   {
     url: '/images/Hero1.png',
     alt: 'Advokatur KuK',
+    desktopPosition: 'center top',
+    mobilePosition: '40% top',
   },
   {
     url: '/images/Hero4.png',
     alt: 'Kanzlei',
+    desktopPosition: '20% top',
+    mobilePosition: '60% top',
   },
   {
     url: '/images/Hero2.png',
     alt: 'Rechtsberatung',
+    desktopPosition: '80% top',
+    mobilePosition: '35% top',
   },
 ];
 
@@ -38,14 +46,17 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <style>{`
-        @media (max-width: 768px) {
-          .hero-img-0 { object-position: 30% top !important; }
-          .hero-img-2 { object-position: 40% top !important; }
-        }
-      `}</style>
       {/* Diashow Hintergrund */}
       {heroImages.map((image, index) => (
         <div
@@ -58,7 +69,8 @@ export default function Hero() {
             src={image.url}
             alt={image.alt}
             fill
-            className={`object-cover object-top hero-img-${index}`}
+            className="object-cover"
+            style={{ objectPosition: isMobile ? image.mobilePosition : image.desktopPosition }}
             priority={index === 0}
           />
         </div>
