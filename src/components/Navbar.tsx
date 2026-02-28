@@ -95,7 +95,7 @@ export default function Navbar() {
         style={{
           backgroundColor: isScrolled ? 'rgba(10, 31, 61, 0.75)' : 'rgba(10, 31, 61, 0.95)',
           backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-          borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.3)',
+          borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
           borderBottomLeftRadius: isScrolled ? '16px' : '0',
           borderBottomRightRadius: isScrolled ? '16px' : '0',
           transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
