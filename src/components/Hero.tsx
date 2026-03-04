@@ -79,7 +79,7 @@ export default function Hero() {
       {/* Transparentes Marineblau Overlay */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(15, 45, 82, 0.75)' }}
+        style={{ backgroundColor: 'rgba(29, 38, 52, 0.75)' }}
       ></div>
 
       {/* Zusätzlicher dunkler Gradient für bessere Lesbarkeit */}

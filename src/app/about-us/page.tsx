@@ -14,7 +14,7 @@ export default function AboutUsPage() {
         color: 'white',
         position: 'relative' as const,
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #0a1f3d 0%, #0f2d52 50%, #1a4d7a 100%)'
+        background: 'linear-gradient(135deg, #121b28 0%, #1d2634 50%, #2a3545 100%)'
       }}>
         {/* Decorative Elements */}
         <div style={{

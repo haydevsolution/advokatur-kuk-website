@@ -18,7 +18,7 @@ export default function Home() {
           left: 0,
           right: 0,
           height: '200px',
-          background: 'linear-gradient(to bottom, rgba(15, 45, 82, 0) 0%, rgba(15, 45, 82, 0.3) 30%, rgba(15, 45, 82, 0.7) 60%, var(--primary) 100%)',
+          background: 'linear-gradient(to bottom, rgba(29, 38, 52, 0) 0%, rgba(29, 38, 52, 0.3) 30%, rgba(29, 38, 52, 0.7) 60%, var(--primary) 100%)',
           pointerEvents: 'none',
           zIndex: 1
         }}></div>

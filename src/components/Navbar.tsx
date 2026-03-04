@@ -89,11 +89,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div style={{ height: '64px', backgroundColor: 'rgb(10, 31, 61)' }} />
+      <div style={{ height: '64px', backgroundColor: 'rgb(29, 38, 52)' }} />
       <nav
         className="shadow-sm w-full fixed top-0"
         style={{
-          backgroundColor: isScrolled ? 'rgba(10, 31, 61, 0.75)' : 'rgba(10, 31, 61, 0.95)',
+          backgroundColor: isScrolled ? 'rgba(29, 38, 52, 0.75)' : 'rgba(29, 38, 52, 0.95)',
           backdropFilter: isScrolled ? 'blur(10px)' : 'none',
           borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.3)',
           borderBottomLeftRadius: isScrolled ? '16px' : '0',
@@ -141,7 +141,7 @@ export default function Navbar() {
                 <span style={{ 
                   display: 'block', 
                   height: '3px', 
-                  backgroundColor: mobileMenuOpen ? '#0f2d52' : 'white',
+                  backgroundColor: mobileMenuOpen ? '#1d2634' : 'white',
                   borderRadius: '2px',
                   transition: 'all 0.3s',
                   transform: mobileMenuOpen ? 'rotate(45deg) translateY(8px)' : 'none'
@@ -149,7 +149,7 @@ export default function Navbar() {
                 <span style={{ 
                   display: 'block', 
                   height: '3px', 
-                  backgroundColor: mobileMenuOpen ? '#0f2d52' : 'white',
+                  backgroundColor: mobileMenuOpen ? '#1d2634' : 'white',
                   borderRadius: '2px',
                   transition: 'all 0.3s',
                   opacity: mobileMenuOpen ? 0 : 1
@@ -157,7 +157,7 @@ export default function Navbar() {
                 <span style={{ 
                   display: 'block', 
                   height: '3px', 
-                  backgroundColor: mobileMenuOpen ? '#0f2d52' : 'white',
+                  backgroundColor: mobileMenuOpen ? '#1d2634' : 'white',
                   borderRadius: '2px',
                   transition: 'all 0.3s',
                   transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-8px)' : 'none'
@@ -313,7 +313,7 @@ export default function Navbar() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: 'rgba(10, 31, 61, 0.95)',
+            backgroundColor: 'rgba(29, 38, 52, 0.95)',
             backdropFilter: 'blur(10px)',
             zIndex: 100000,
             paddingTop: '100px',
