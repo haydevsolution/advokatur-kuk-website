@@ -116,6 +116,7 @@ export default function Navbar() {
                 className="h-14 w-auto"
                 style={{ backgroundColor: 'transparent' }}
                 priority
+                unoptimized
               />
             </Link>
 
@@ -182,6 +183,7 @@ export default function Navbar() {
                 height={48}
                 className="h-10 w-auto"
                 priority
+                unoptimized
               />
             </Link>
 
@@ -366,6 +368,7 @@ export default function Navbar() {
                 height={55}
                 style={{ margin: '0 auto' }}
                 priority
+                unoptimized
               />
             </div>
 
