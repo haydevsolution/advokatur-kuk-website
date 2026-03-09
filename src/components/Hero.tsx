@@ -14,18 +14,6 @@ const heroImages = [
     mobilePosition: '30% top',
   },
   {
-    url: '/images/Hero1.png',
-    alt: 'Advokatur KuK',
-    desktopPosition: 'center top',
-    mobilePosition: '25% top',
-  },
-  {
-    url: '/images/Hero4.png',
-    alt: 'Kanzlei',
-    desktopPosition: '20% top',
-    mobilePosition: '60% top',
-  },
-  {
     url: '/images/Hero2.png',
     alt: 'Rechtsberatung',
     desktopPosition: '80% top',

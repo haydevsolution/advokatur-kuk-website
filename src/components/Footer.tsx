@@ -92,7 +92,7 @@ export default function Footer() {
             {/* Kanzlei Info */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.75rem', color: 'var(--gold)' }}>
-                Advokatur KuK AG (in Gründung)
+                Advokatur KuK AG
               </h3>
               <div style={{ color: '#4b5563', lineHeight: '1.6' }}>
                 <p style={{ fontWeight: '600', marginBottom: '0.25rem', color: 'var(--primary)' }}>Address:</p>
@@ -133,7 +133,7 @@ export default function Footer() {
           <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.1)', marginTop: '2rem', paddingTop: '1.5rem' }}>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '1rem', textAlign: 'center', flexWrap: 'wrap' }}>
               <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: 0 }}>
-                © {currentYear} Advokatur KuK AG (in Gründung). All rights reserved.
+                © {currentYear} Advokatur KuK AG. All rights reserved.
               </p>
             </div>
           </div>

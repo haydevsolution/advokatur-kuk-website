@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Advokatur KuK AG (in Gründung) | Your Law Firm",
-  description: "Competent legal advice with personal care. Advokatur KuK AG (in Gründung) stands by your side with experience and expertise in all legal matters.",
+  title: "Advokatur KuK AG | Your Law Firm",
+  description: "Competent legal advice with personal care. Advokatur KuK AG stands by your side with experience and expertise in all legal matters.",
   keywords: "Lawyer, Law Firm, Legal Advice, Attorney, Advokatur, KuK",
 };
 

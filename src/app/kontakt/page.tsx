@@ -502,7 +502,7 @@ export default function KontaktPage() {
             {/* Right: Image + Contact Info */}
             <div className="lg:col-span-2" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {/* Contact Image */}
-              <div className="contact-image-wrapper" style={{ borderRadius: '16px', overflow: 'hidden', position: 'relative', flex: '1 1 0' , minHeight: '300px' }}>
+              <div className="contact-image-wrapper" style={{ borderRadius: '16px', overflow: 'hidden', position: 'relative', minHeight: '300px', maxHeight: '500px' }}>
                 <Image
                   src="/images/Kontakt.png"
                   alt="Advokatur KuK Kontakt"
