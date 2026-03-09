@@ -100,18 +100,6 @@ export default function AboutUsPage() {
                   </p>
                 </div>
 
-                <div className="md:col-span-2 relative" style={{ minHeight: '400px' }}>
-                  <div style={{ position: 'sticky', top: '6rem', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.12)' }}>
-                    <Image
-                      src="/images/chair.jpg"
-                      alt="Advokatur KuK Office"
-                      width={500}
-                      height={650}
-                      className="object-cover"
-                      style={{ width: '100%', height: 'auto' }}
-                    />
-                  </div>
-                </div>
               </div>
             </div>
 

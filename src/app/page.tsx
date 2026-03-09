@@ -191,7 +191,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div style={{ textAlign: 'center', marginBottom: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <BlurText
-              text="Why Advokatur KuK AG (in Gründung)?"
+              text="Why Advokatur KuK?"
               delay={150}
               animateBy="words"
               direction="top"

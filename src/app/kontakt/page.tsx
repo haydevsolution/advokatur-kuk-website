@@ -148,11 +148,11 @@ export default function KontaktPage() {
             {/* Form Header */}
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--primary)' }}>
-                Send us a message
+                Send a message
               </h2>
               <div style={{ height: '4px', width: '80px', backgroundColor: 'var(--gold)', margin: '0 auto 1.5rem' }}></div>
               <p className="text-lg" style={{ color: '#6b7280' }}>
-                Fill out the form below and We will get back to you as soon as possible.
+                Fill out the form below and we will get back to you as soon as possible.
               </p>
             </div>
 
@@ -512,29 +512,6 @@ export default function KontaktPage() {
                 />
               </div>
 
-              {/* Logo */}
-              <div
-                className="contact-details-card"
-                style={{
-                  background: 'white',
-                  borderRadius: '16px',
-                  padding: '2rem',
-                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid #e5e7eb',
-                  flexShrink: 0,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-              >
-                <Image
-                  src="/images/LOGO-Photoroom(1).png"
-                  alt="Advokatur KuK Logo"
-                  width={220}
-                  height={80}
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
             </div>
 
             </div>

@@ -100,11 +100,11 @@ export default function ServicesPage() {
               </p>
 
               <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Katalin has specific experience in the fields of <strong>aviation</strong> (post mergers & acquisitions disputes, sale and lease back agreements), <strong>trade of commodities</strong> (supply agreements), <strong>constructions</strong> (contract law, licensing) and <strong>intellectual property</strong> (international publishing).
+                Katalin has specific experience in the fields of aviation (post mergers & acquisitions disputes, sale and lease back agreements), trade of commodities (supply agreements), constructions (contract law, licensing) and intellectual property (international publishing).
               </p>
 
               <p className="text-lg leading-relaxed" style={{ color: '#4b5563' }}>
-                Katalin represented athletes in proceedings at the <strong>Court of Arbitration for Sport, Lausanne</strong> as pro bono counsel.
+                Katalin represented athletes in proceedings at the Court of Arbitration for Sport, Lausanne as pro bono counsel.
               </p>
             </div>
 
