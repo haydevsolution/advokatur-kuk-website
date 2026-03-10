@@ -101,7 +101,7 @@ export default function DatenschutzPage() {
                   <p className="text-gray-600 mb-2">
                     The body responsible for data processing on this website is:
                   </p>
-                  <p className="text-gray-600">Advokatur KuK AG</p>
+                  <p className="text-gray-600">Advokatur KuK AG (in Gründung)</p>
                   <p className="text-gray-600">Katalin Nemeth</p>
                   <p className="text-gray-600">Hauptstrasse 77</p>
                   <p className="text-gray-600">6260 Reiden, Switzerland</p>
